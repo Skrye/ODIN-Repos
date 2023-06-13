@@ -1,0 +1,30 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    background-color: powderblue;
+    color: #4f6d7a;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+img {
+    height: 30%;
+    width: 30%;
+}
+
+.ingredients {
+    font-size: 14px;
+}
