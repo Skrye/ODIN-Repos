@@ -2,9 +2,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html {
+body {
     background-color: powderblue;
     color: #4f6d7a;
+    text-align: center;
 }
 
 a:link {
@@ -20,11 +21,36 @@ a:hover {
     color: red;
 }
 
+header {
+    display: inline-block;
+    background-color: #eaeaea;
+    border-radius: 20px;
+    margin: 0 8px;
+    padding: 0 10px;
+}
+
+main {
+    display: inline-block;
+}
+
+footer {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
 img {
-    height: 30%;
-    width: 30%;
+    height: 50%;
+    width: 50%;
+    border-radius: 20px;
 }
 
 .ingredients {
     font-size: 14px;
+    text-align: left;
+    border: #eaeaea solid;
+}
+
+.instructions {
+    text-align: left;
+    border: #eaeaea solid;
 }
