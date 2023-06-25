@@ -15,6 +15,11 @@ img {
     width: 300px;
 }
 
+header {
+    background-color: rgb(31, 41, 56) 12% 78%);
+    padding: 16px;
+}
+
 .nav-bar {
     background-color: #1F2937;
     display: flex;
@@ -22,10 +27,19 @@ img {
     justify-content: space-between;
 }
 
-li {
+ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: ;
+}
+
+li {
+    list-style: none;
+    padding: 16px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .logo-text {
@@ -35,6 +49,7 @@ li {
 
 .logo {
     width: 300px;
+    border-radius: 250px;
 }
 
 main {
@@ -44,4 +59,24 @@ main {
 .cards {
     display: flex;
     flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #E5E7EB;
+}
+
+.testimonial-text {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+    color: #1F2937;
+}
+
+.call-to-action {
+    background-color: #3882F6;
+}
+
+button {
+    background-color: #3882F6;
+    color: white;   
 }
