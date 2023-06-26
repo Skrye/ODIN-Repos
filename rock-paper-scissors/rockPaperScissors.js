@@ -29,10 +29,14 @@ function getPlayerSelection() {
 
 function playRound(playerSelection, computerSelection) {
     roundsPlayed++;
-    if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "rock")) {
+    if ((playerSelection === "rock" && computerSelection === "scissors") 
+    || (playerSelection === "scissors" && computerSelection === "paper") 
+    || (playerSelection === "paper" && computerSelection === "rock")) {
         gamesWon++;
         console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
-    } else if ((playerSelection === "scissors" && computerSelection === "rock") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "rock" && computerSelection === "paper")) {
+    } else if ((playerSelection === "scissors" && computerSelection === "rock") 
+    || (playerSelection === "paper" && computerSelection === "scissors") 
+    || (playerSelection === "rock" && computerSelection === "paper")) {
         gamesLost++;
         console.log(`You lose! ${computerSelection} beats ${playerSelection}.`);
     } else {
