@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <main>
         <h1>Play a game of Rock, Paper, Scissors?</h1>
-        <p>Check the console for results when you're finished.</p>
-        <button onclick="game()">Click to Play</button>
+        <h2>You can see the results below.</h2>
+        <div class="tally">
+            <p>Games won: <span id="gamesWon">0</span></p>
+            <p>Games lost: <span id="gamesLost">0</span></p>
+        </div>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <div id="log">
 
+        </div>
         
     <script src="./rockPaperScissors.js" />
     </main>

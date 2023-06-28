@@ -4,6 +4,20 @@ let gamesWon = 0;
 let gamesLost = 0;
 let roundsPlayed = 0;
 
+const winTally = document.getElementById("gamesWon");
+const lossTally = document.getElementById("gamesLost");
+
+const throwRock = document.getElementById("rock");
+throwRock.addEventListener("click", function(){getPlayerSelection("rock")});
+
+const throwPaper = document.getElementById("paper");
+throwPaper.addEventListener("click", function(){getPlayerSelection("paper")});
+
+const throwScissors = document.getElementById("scissors");
+throwScissors.addEventListener("click", function(){getPlayerSelection("scissors")});
+
+const log = document.getElementById("log");
+
 function getComputerSelection() {
     const min = Math.ceil(1);
     const max = Math.floor(3);
@@ -18,43 +32,68 @@ function getComputerSelection() {
         case 3:
             computerSelection = "scissors";
     }
-    console.log(`The computer picked ${computerSelection}.`);
+    log.innerHTML += ` The computer picked ${computerSelection}.<br>`;
     return computerSelection;
 }
 
-function getPlayerSelection() {
-    playerSelection = prompt("What will you throw?", "rock, paper, or scissors").toLowerCase();
-    console.log(`You picked ${playerSelection}`)
+function getPlayerSelection(string) {
+    playerSelection = string;
+    log.innerHTML += `You picked ${playerSelection}.`;
+    getComputerSelection();
+    playRound(playerSelection, computerSelection);
 }
 
 function playRound(playerSelection, computerSelection) {
-    roundsPlayed++;
+    roundsPlayed += 1;
     if ((playerSelection === "rock" && computerSelection === "scissors") 
     || (playerSelection === "scissors" && computerSelection === "paper") 
     || (playerSelection === "paper" && computerSelection === "rock")) {
         gamesWon++;
-        console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+        winTally.innerHTML = gamesWon;
+        log.innerHTML += `You win! ${playerSelection} beats ${computerSelection}.<br><br>`;
     } else if ((playerSelection === "scissors" && computerSelection === "rock") 
     || (playerSelection === "paper" && computerSelection === "scissors") 
     || (playerSelection === "rock" && computerSelection === "paper")) {
         gamesLost++;
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}.`);
+        lossTally.innerHTML = gamesLost;
+        log.innerHTML += `You lose! ${computerSelection} beats ${playerSelection}.<br><br>`;
     } else {
-        console.log("It's a tie.");
+        log.innerHTML += "It's a tie.<br><br>";
+    }
+    if (gamesWon === 5 || gamesLost === 5) {
+        getWinner();
     }
 }
 
 function getWinner() {
     if (gamesWon > gamesLost) {
-        return "You won!"
-    } else if (gamesLost > gamesWon) {
-        return "You lost!"
+        log.innerHTML += `You won! Congratulations!<br>
+        Play Again? <button id="playAgainYes">Yes</button> <button id="playAgainNo">No</button><br>`;
     } else {
-        return "It was a tie."
-    }
+        log.innerHTML += `You lost! Better luck next time.<br>
+        Play Again? <button id="playAgainYes">Yes</button> <button id="playAgainNo">No</button><br>`;
+        var playAgainYes = document.getElementById("playAgainYes");
+        var playAgainNo = document.getElementById("playAgainNo");
 
+        playAgainYes.addEventListener("click", function(){playAgain("yes")});
+        playAgainNo.addEventListener("click", function(){playAgain("no")});
+    }
 }
 
+function playAgain(string) {
+    if (string === "yes") {
+        playerSelection = "";
+        computerSelection = "";
+        gamesWon = 0;
+        gamesLost = 0;
+        roundsPlayed = 0;
+        log.innerHTML = ``;
+    } else {
+        log.innerHTML += `Have a nice day!`;
+    }
+}
+
+/* logic to play a five-round game without event listener
 function game() {
     for (let i = 0; i != 5; i++) {
         getPlayerSelection();
@@ -63,3 +102,4 @@ function game() {
     }
     console.log(`${getWinner()} You played ${roundsPlayed}, you won ${gamesWon} and lost ${gamesLost}.`)
 }
+*/
