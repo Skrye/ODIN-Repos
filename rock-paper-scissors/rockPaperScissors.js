@@ -66,31 +66,27 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function getWinner() {
+    throwRock.removeEventListener("click", function(){getPlayerSelection("rock")});
+    throwPaper.removeEventListener("click", function(){getPlayerSelection("paper")});
+    throwScissors.removeEventListener("click", function(){getPlayerSelection("scissors")});
     if (gamesWon > gamesLost) {
-        log.innerHTML += `You won! Congratulations!<br>
-        Play Again? <button id="playAgainYes">Yes</button> <button id="playAgainNo">No</button><br>`;
+        log.innerHTML += `You won! Congratulations!<br><br>`;
+        //playAgain();
     } else {
-        log.innerHTML += `You lost! Better luck next time.<br>
-        Play Again? <button id="playAgainYes">Yes</button> <button id="playAgainNo">No</button><br>`;
-        var playAgainYes = document.getElementById("playAgainYes");
-        var playAgainNo = document.getElementById("playAgainNo");
-
-        playAgainYes.addEventListener("click", function(){playAgain("yes")});
-        playAgainNo.addEventListener("click", function(){playAgain("no")});
+        log.innerHTML += `You lost! Better luck next time.<br><br>`;
+        //playAgain();
     }
 }
 
-function playAgain(string) {
-    if (string === "yes") {
-        playerSelection = "";
-        computerSelection = "";
-        gamesWon = 0;
-        gamesLost = 0;
-        roundsPlayed = 0;
-        log.innerHTML = ``;
-    } else {
-        log.innerHTML += `Have a nice day!`;
-    }
+/* code below is not working, but also not asked for by TOP
+
+function playAgain() {
+    log.innerHTML += `Play Again? <button id="playAgainYes">Yes</button> <button id="playAgainNo">No</button><br>`
+    var playAgainYes = document.getElementById("playAgainYes");
+    var playAgainNo = document.getElementById("playAgainNo");
+
+    playAgainYes.addEventListener("click", function(){playAgain("yes")});
+    playAgainNo.addEventListener("click", function(){playAgain("no")});
 }
 
 /* logic to play a five-round game without event listener
