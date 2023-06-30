@@ -1,0 +1,19 @@
+.flex-grid {
+    width: 960px;
+    height: 960px;
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.pixel {
+    flex: 1 1 auto;
+}
+
+.black {
+    background-color: black;
+}
