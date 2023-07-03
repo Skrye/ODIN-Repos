@@ -5,7 +5,7 @@ container.innerHTML = "";
 	for (let i = 0; i < number; i++) {
 		let column = document.createElement("div");
 		column.classList.add("column");
-		document.querySelector(".container").appendChild(column);
+		container.appendChild(column);
 	}
 	let columns = document.querySelectorAll(".column");
 	for (let i = 0; i < number; i++) {
