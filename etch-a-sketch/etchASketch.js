@@ -1,5 +1,18 @@
 const container = document.querySelector(".container");
 
+let rgbSwitch = document.getElementById("rgbCheck");
+let gradualSwitch = document.getElementById("gradualCheck");
+
+function randomNumberGenerator(minNum, maxNum) {
+	const min = Math.ceil(minNum);
+	const max = Math.floor(maxNum);
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomRGB() {
+	return randomNumberGenerator (0,255);
+}
+
 function sketchGrid(number) {
 container.innerHTML = "";
 	for (let i = 0; i < number; i++) {
@@ -11,8 +24,23 @@ container.innerHTML = "";
 	for (let i = 0; i < number; i++) {
 		for (let j = 0; j < number; j++) {
 			let pixel = document.createElement("div");
-			pixel.classList.add("pixel");
-			pixel.addEventListener("mousemove", function() { pixel.classList.add("black") })
+			pixel.classList.add("pixel")
+			pixel.addEventListener("mouseenter", function() {
+				if (rgbSwitch.checked == true) {
+					pixel.style.backgroundColor = `rgb(${randomRGB()},${randomRGB()},${randomRGB()})`;
+				} else {
+					pixel.style.backgroundColor = "black";
+				}
+				if (gradualSwitch.checked == true) {
+					if (pixel.style.opacity < 1) {
+						let currentOpacity = Number(pixel.style.opacity) + 0.1;
+						console.log(currentOpacity);
+						pixel.style.opacity = currentOpacity;
+					}
+				} else {
+					pixel.style.opacity = 1.0;
+				}
+			});
 			columns[i].appendChild(pixel);
 		}
 	}
