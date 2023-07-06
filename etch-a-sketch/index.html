@@ -4,16 +4,26 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Etch a Sketch</title>
-	<link rel="stylesheet" href="./style.css" />
+	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 	<header>
-		<button onclick="newGrid()" id="newGrid">
-		New Etch-a-Sketch
-		</button>
+		<button onclick="newGrid()" id="newGrid">New Etch-a-Sketch</button>
+		<div class="modes">
+			<p>RGB Mode</p>
+			<label for="rgbCheck" class="switch">
+  			<input id="rgbCheck" type="checkbox">
+  			<span class="slider round"></span>
+			</label>
+			<p>Gradual Mode</p>
+			<label for="gradualCheck" class="switch">
+  			<input id="gradualCheck" type="checkbox">
+  			<span class="slider round"></span>
+			</label>
+		</div>
 	</header>
 	<div class="container">
 	</div>
-	<script src="./etchASketch.js" />
+	<script src="./etchASketch.js"></script>
 </body>
 </html>
