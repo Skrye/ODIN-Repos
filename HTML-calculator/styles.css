@@ -1,0 +1,38 @@
+* {
+    display: flex;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    flex-wrap: wrap;
+}
+
+.display {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    background-color: powderblue;
+}
+
+.clear {
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
+
+.pad {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.number {
+    flex-wrap: wrap;
+}
+
+.operator {
+    flex-wrap: wrap;
+}
