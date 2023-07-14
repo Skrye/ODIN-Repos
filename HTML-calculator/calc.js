@@ -1,15 +1,12 @@
 const add = function(num1, num2) {
 	return num1 + num2;
 };
-
 const subtract = function(num1, num2) {
 	return num1 - num2;
 };
-
 const multiply = function(num1, num2) {
   return num1 * num2
 };
-
 const divide = function(num1, num2) {
     return num1 / num2;
 }
@@ -31,6 +28,20 @@ const operate = function(num1, operator, num2) {
         default:
     }
 }
+
+const numberPad = document.getElementsByClassName("number");
+const operatorPad = document.getElementsByClassName("operator");
+
+function makeRows(element) {
+  for (let i = 0; i < 4; i++) {
+    let row = document.createElement("row");
+    row.classList.add("row");
+    element.appendChild(row);
+  }
+}
+
+makeRows(numberPad);
+makeRows(operatorPad);
 
 /*
 const power = function(a, b) {
