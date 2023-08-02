@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Calculator</title>
-	<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
 
-    <div class="container calculator">
-        <div class="display"></div>
-        <div class="clear button"></div>
-        <div class="number pad"></div>
-        <div class="operator pad"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <div class="container">
+		
+      <div class="display">
+        <div id="active-operation"></div>
+        <div id="operations-log"></div>
+      </div>
+	
+      <div id="clear-button"></div>
+
+      <div id="button-container">
+        <div id="numbers">
+            <div class="number-row"></div>
+            <div class="number-row"></div>
+            <div class="number-row"></div>
+            <div class="number-row"></div>
+        </div>
+        <div id="operators"></div>
+      </div>
+			
     </div>
-    
-    
-    
+
+
+
     <script src="./calc.js"></script>
-</body>
+  </body>
+
 </html>
