@@ -1,99 +1,111 @@
 html {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+		width: 100%;
 }
 
 /* XS: Phones */
 @media only screen and (max-width: 600px) {
-.container { width: 600px; }
+	.container { min-width: 600px; }
 }
 
 /* S: Portrait Tablets/Large Phones 600+ */
 @media only screen and (min-width: 600px) {
-.container { width: 600px; }
+	.container { width: 100%; }
 }
 
-/* M: Landscape Tablets 768+ */
+/* M: Landscape Tablets 768+
 @media only screen and (min-width: 768px) {
-.container { width: 600px; }
+	.container { width: 600px; }
 }
 
-/* L: Laptops/Desktops 992+ */
+/* L: Laptops/Desktops 992+
 @media only screen and (min-width: 992px) {
-.container { width: 600px; }
+	.container { width: 600px; }
 }
 
-/* XL: Desktops 1200px+ */
+/* XL: Desktops 1200px+ 
 @media only screen and (min-width: 1200px) {
-.container { width: 600px; }
-}
+	.container { width: 600px; }
+} */
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    border: solid 1px black;
 }
-
+  
 .display {
-  display: flex;
-  width: 80%;
-  height: 21%;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  background-color: powderblue;
+    display: flex;
+    width: 80%;
+    height: 21%;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    background-color: powderblue;
 }
-
+  
 #clear-button {
-  display: flex;
-  width: 20%;
-  justify-content: center;
-  background-color: orange;
+    display: flex;
+    width: 20%;
+    justify-content: center;
 }
 
 #button-container {
-  display: flex;
-  width: 100%;
-  height: 79%;
+    display: flex;
+    width: 100%;
+    height: 79%;
 }
 
 #numbers {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  flex-direction: column-reverse;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    flex-direction: column-reverse;
 }
 
 .number-row {
-  display: flex;
-  flex-grow: 1;
+    display: flex;
+    flex-grow: 1;
 }
 
 .button {
-  flex-grow: 1;
-  border: none;
+    flex-grow: 1;
+    border: none;
+}
+
+.button:active {
+    background-color: #B1B1B9;
+}
+
+:focus {
+	outline: none;
 }
 
 .pressed {
-  background-color: #B1B1B9;
+    background-color: #B1B1B9;
 }
 
 #equals {
-  background-color: slategrey;
+    background-color: slategrey;
 }
 
 #operators {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 20%;
+}
+
+#Delete {
+    background-color: orange;
 }
