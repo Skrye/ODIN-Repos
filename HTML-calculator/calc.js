@@ -5,11 +5,13 @@ const clearContainer = document.getElementById('clear-button');
 const buttonContainer = document.getElementById('button-container');
 const numberContainer = document.getElementById('numbers');
 const operatorContainer = document.getElementById('operators');
-/* Memory Options to be implemented after I learn how to add it via state-based effect
-   instead of "Flip switch, remake all the buttons".
+
+/* Memory Options to be implemented after I learn how to add it via state-based
+   / Non Global variable effect instead of "Flip switch, remake all the buttons".
 const memoryValue = document.getElementByID('stored-memory');
 let memoryOptionSwitch = document.getElementById('memory-switch');
 const memoryOption = ['MC', 'M+', 'M-', 'MR', 'MU']; */
+
 //Calculator Functions
 const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
@@ -44,6 +46,7 @@ const clear = () => {
 		clear.value = 0;
 	}
 }
+
 // Page Setup
 const init = () => {
 	makeButtons();
@@ -53,7 +56,7 @@ const init = () => {
 const makeButtons = function() {
 	const numberButtons = ['0', '.', '=', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 	const operatorButtons = ['+', '-', '*', '/', '+/-'];
-	const fullSize = [...numberButtons, ...operatorButtons, 'C/CE'];
+	const fullSize = [...numberButtons, ...operatorButtons, 'Clear'];
 	for (let i = 0; i < fullSize.length; i++) {
 		let button = document.createElement('button');
 		// Button ID's for styling and buttonClicked behavior
@@ -67,39 +70,69 @@ const makeButtons = function() {
 const addToOperation = function() {
 	addToOperation.value = addToOperation.value || '';
 	let newNumber = '';
-	if (this.id == 'Enter') {
-		let operateThis =  activeOperation.innerHTML.split(' ');
-		while (operateThis.length > 1) {
-			const [number1, operator, number2, ...rest] = operateThis;
-			newNumber = operate(number1, operator, number2);
-			operateThis = [newNumber, ...rest];
-			console.log(newNumber);
-		}
-		operationsLog.innerHTML += `${activeOperation.innerHTML} = <br>`;
-		activeOperation.innerHTML = `${newNumber}`;
-		addToOperation.value = 'equals';
-	}
-	if (this.classList[0] == 'operator') {
-		activeOperation.innerHTML += ` ${this.innerHTML} `;
-		addToOperation.value = 'operator';
-	}
+	let operateThis =  activeOperation.innerHTML.split(' ');
+	// Add to the active operation if the button pressed is a number or decimal
+	// AND clear if equals was the last button pressed.
 	if (this.classList[0] == 'number' && this.id != 'Enter') {
+		if (addToOperation.value == 'equals') {
+			clear();
+		}
 		activeOperation.innerHTML += `${this.innerHTML}`;
 		addToOperation.value = 'number';
 	}
+	// take the current equation, reduce it to one number, log the old equation and display
+	// the new number as the start of a new equation.
+	if (this.id == 'Enter' && addToOperation.value == 'number') {
+		while (operateThis.length > 2) {
+			const [number1, operator, number2, ...rest] = operateThis;
+			newNumber = operate(number1, operator, number2);
+			operateThis = [newNumber, ...rest];
+		}
+		// Running log of old equations
+		operationsLog.innerHTML += `${activeOperation.innerHTML} = <br>`;
+		let logLength = operationsLog.innerHTML.split(`<br>`);
+		if (logLength.length > 4) {
+			let newLog1 = logLength.slice(-4, -3);
+			let newLog2 = logLength.slice(-3, -2);
+			let newLog3 = logLength.slice(-2, -1);
+			operationsLog.innerHTML = `${newLog1} <br> ${newLog2} <br> ${newLog3} <br>`;
+		}
+		activeOperation.innerHTML = `${operateThis}`;
+		addToOperation.value = 'equals';
+	}
+	//disable * and / on empty equations
+	if (operateThis[0] === '' && this.id == '*' || this.id == '/' && operateThis[0] === '') {
+		return null;
+	}
+	// Add or replace an operator in the current equation
+	// !!! newOperation puts in commas when splicing the array with more than one number. use join(' ').
+	if (this.classList[0] == 'operator' && addToOperation.value != 'operator' && this.id != 'posit-negate') {
+		activeOperation.innerHTML += ` ${this.innerHTML} `;
+		addToOperation.value = 'operator';
+	} else if (this.classList[0] == 'operator' && addToOperation.value == 'operator' && this.id != 'posit-negate') {
+			let newOperation = activeOperation.innerHTML.split(' ').slice();
+			newOperation.splice(-2, 1, `${this.innerHTML}`);
+			activeOperation.innerHTML = newOperation.join(' ');
+			addToOperation.value = 'operator';
+	}
+	// negate or make positive current number
+	if (this.id == 'posit-negate' && addToOperation.value == 'number') {
+		let currentOperation = activeOperation.innerHTML.split(' ');
+		let oldNumber = currentOperation.pop();
+		if (oldNumber[0] >= 0) {
+			let newNumber = -Math.abs(oldNumber)
+			currentOperation.push(newNumber)
+		} else if (oldNumber < 0) {
+			let newNumber = Math.abs(oldNumber)
+			currentOperation.push(newNumber)
+		}
+		addToOperation.value = 'number';
+		activeOperation.innerHTML = currentOperation.join(' ');
+	}
+	// Clear the current equation or current equation + log
 	if (this.classList[0] == 'clear') {
 		clear();
 	}
-}
-const keyPressed = (e) => {
-	const pressed = document.getElementById(`${e.key}`);
-	pressed.click();
-	pressed.classList.add('pressed');
-	console.table(pressed)
-}
-const unPressed = (e) => {
-	const pressed = document.getElementById(`${e.key}`);
-	pressed.classList.remove('pressed');
 }
 const setProperties = (button, x) => {
 	button.innerHTML = `${x}`;
@@ -169,10 +202,10 @@ const setProperties = (button, x) => {
 			button.classList.add('operator', 'button', 'key');
 			break;
 		case '+/-':
-			button.setAttribute('id', 'positive-negative');
+			button.setAttribute('id', 'posit-negate');
 			button.classList.add('operator', 'button');
 			break;
-		case 'C/CE':
+		case 'Clear':
 			button.setAttribute('id', 'Delete');
 			button.classList.add('clear', 'button', 'key');
 			break;
@@ -196,5 +229,38 @@ const attachButton = (button, x) => {
 			return null;
 	}
 }
+const keyPressed = (e) => {
+	const pressed = document.getElementById(`${e.key}`);
+	pressed.click();
+	pressed.classList.add('pressed');
+	console.table(pressed)
+}
+const unPressed = (e) => {
+	const pressed = document.getElementById(`${e.key}`);
+	pressed.classList.remove('pressed');
+}
 
 init()
+
+/* To-Do:
+character limit for numbers (8?)
+backspace button (numbers only)
+disable decimals after 1 is used per number
+make it look nice (keys are responsive for buttons, change colors of operators and equals signs?)
+PEMDAS Mode
+Memory Buttons
+
+Done:
+Buttons created, assigned unique IDs, and attached to different portions of calculator
+logic for calculator done (take input numbers and operators into a string, 
+	split at spaces provided by operator, run through a function to reduce to a single value,
+	 make that the new first number, and log the old equation)
+make operators replace each other if no new number is put in
+clear the calculator if a new number is input after hitting equals and nothing else is input 
+introduce a log limit
+disable "*" and "/" operators if activeOperation is empty
+fix styling for different devices (calculator width based on screen size)
++/- or positive and negative function
+remove focus outlines (may replace in the future, but this app is not
+	designed to be navigated like a web page)
+*/
