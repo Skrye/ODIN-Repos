@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup-forms</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Roboto&display=swap');
+    </style>
+</head>
+<body>
+    <div id="logo-container">
+        <div id="logo-text">
+            <img id="logo" src="./odin-filled">Le Sourire s'estompe
+        </div>
+        <div id="background-source">Photo by Anne Nygård (polarmermaid) via Unsplash</div>
+        <img src="./untitled by Anne.avif" id="logo-background" />
+    </div>
+
+    <div id="signup-container">
+        <div id="signup-header">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est erat, luctus in nisl eu.
+            <br>
+            <br>
+            Sign-up below.    
+        </div>
+
+        <div id="signup-form">
+            <form action="./forms.js" method="post">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name">
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="emial">
+                
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password">
+            </form>
+        </div>
+
+        <div id="signup-submit">
+            <input type="submit" id="create-account" text="Create Account" />
+            <div id="login-redirect">Already have an account? <span id="Login-Link">Log In</span></div>
+        </div>
+    </div>
+</body>
+</html>
