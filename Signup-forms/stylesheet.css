@@ -58,7 +58,7 @@
 	align-self: flex-end;
 	left: 0;
 	bottom: 0;
-	min-width: 35%;
+	width: 100%;
 	font-size: 0.8em;
 	background-color: lightgray;
 	opacity: 0.8;
