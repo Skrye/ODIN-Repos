@@ -51,7 +51,8 @@
 
 #logo-background {
 	position: absolute;
-	width: 100%;
+	left: 0;
+	width: 35%;
 	height: 100%;
 }
 
