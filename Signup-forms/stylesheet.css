@@ -101,6 +101,8 @@
 	padding: 1rem;
 	height: 30%;
 	box-shadow: 2px 5px 5px slategray;
+	align-content: center;
+	flex-wrap: wrap;
 }
 
 .column {
