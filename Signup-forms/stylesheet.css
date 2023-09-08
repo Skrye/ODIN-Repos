@@ -41,7 +41,7 @@
 #logo-container {
     display: flex;
     flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	width: 35%;
 }
 
@@ -71,7 +71,7 @@
 }
 
 #background-source {
-	align-self: flex-end;
+	justify-self: flex-end;
 	left: 0;
 	bottom: 0;
 	width: 100%;
