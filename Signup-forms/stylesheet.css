@@ -38,12 +38,18 @@
     display: flex;
 	border: solid black 1px;
 }
+.mobile#flex-container {
+    flex-direction: column;
+}
 
 #logo-container {
     display: flex;
     flex-direction: column;
 	width: 35%;
 	justify-content: center;
+}
+.mobile#logo-container {
+    width: 100%;
 }
 
 #logo {
@@ -61,6 +67,7 @@
 	background-color: gray;
 	opacity: 0.8;
 	width: 100%;
+	justify-content: center;
 }
 
 #logo-background {
@@ -68,6 +75,10 @@
 	left: 0;
 	width: 35%;
 	height: 100%;
+}
+.mobile#logo-background {
+    position: relative;
+    width: 100%;
 }
 
 #background-source {
@@ -80,6 +91,10 @@
 	background-color: lightgray;
 	opacity: 0.8;
 	text-decoration-color: black;
+}
+.mobile#background-source {
+	position: relative;
+	width: 100;
 }
 
 #signup-container {
