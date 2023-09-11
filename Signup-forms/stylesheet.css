@@ -121,7 +121,7 @@
 	flex-wrap: wrap;
 }
 
-label.column {
+column {
 	margin-bottom: 1rem;
 	margin-top: 1rem;
 	display: flex;
