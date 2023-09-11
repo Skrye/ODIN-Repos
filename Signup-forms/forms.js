@@ -17,7 +17,7 @@ email.addEventListener('input', (event) => {
 });
 
 function showError() {
-    if (email.validity.valueMIssing) {
+    if (email.validity.valueMissing) {
         email.textContent = "You need to enter an email address.";
     } else if (email.validity.typeMismatch) {
         emailError.textContent = 'Entered value needs to be an email address.';
