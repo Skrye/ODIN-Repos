@@ -11,9 +11,9 @@ email.addEventListener('input', (event) => {
         email.textContent = '';
         email.className = '';
     } else {
+        email.classList.add = 'error';
         showError();
         event.preventDefault();
-        email.className = 'error';
     }
 });
 
