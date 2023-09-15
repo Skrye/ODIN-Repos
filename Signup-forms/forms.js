@@ -13,6 +13,7 @@ email.addEventListener('input', (event) => {
     } else {
         showError();
         event.preventDefault();
+        email.className = 'error';
     }
 });
 
