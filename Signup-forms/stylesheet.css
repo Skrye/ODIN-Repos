@@ -152,8 +152,7 @@ input {
 	margin-bottom: 1rem;
 }
 input:invalid {
-	border-color: #900;
-	border: 3px solid;
+	border: 3px solid #900;
 }
 input:focus:invalid {
 	outline: none;
