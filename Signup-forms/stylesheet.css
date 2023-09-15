@@ -135,17 +135,6 @@ label {
 	flex-direction: column;
 }
 
-input {
-	margin-bottom: 1rem;
-}
-input:invalid {
-	border-color: #900;
-	background-color: #fdd;
-}
-input:focus:invalid {
-	outline: none;
-}
-
 .error {
 	width: 100%;
 	padding: 0;
@@ -157,6 +146,17 @@ input:focus:invalid {
 }
 .error.active {
 	padding: 0.3em;
+}
+
+input {
+	margin-bottom: 1rem;
+}
+input:invalid {
+	border-color: #900;
+	background-color: #fdd;
+}
+input:focus:invalid {
+	outline: none;
 }
 
 #signup-submit {
