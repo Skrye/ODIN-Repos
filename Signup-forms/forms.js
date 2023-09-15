@@ -16,6 +16,13 @@ email.addEventListener('input', (event) => {
     }
 });
 
+FormData.addEventListener('submit', (event) => {
+    if (!email.validity.valid) {
+        showError();
+        event.preventDefault();
+    }
+})
+
 function showError() {
     if (email.validity.valueMissing) {
         email.textContent = "You need to enter an email address.";
