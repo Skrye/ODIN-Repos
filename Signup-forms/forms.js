@@ -9,7 +9,7 @@ const confirmPassword = document.getElementById('confirm-password');
 email.addEventListener('input', (event) => {
     if (email.validity.valid) {
         email.textContent = '';
-        email.className = 'error';
+        email.className = '';
     } else {
         showError();
         event.preventDefault();
