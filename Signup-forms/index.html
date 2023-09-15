@@ -48,7 +48,7 @@
           </label>
   
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" />
+          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
         </div>
           
         <div class="column">
