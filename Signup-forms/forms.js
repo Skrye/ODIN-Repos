@@ -72,3 +72,4 @@ function validatePassword() {
         confirmPasswordError.className = 'error active';
     }
 }
+
