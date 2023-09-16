@@ -4,9 +4,9 @@ const email = document.getElementById('email');
 const emailError = document.querySelector('#mail + span.error');
 const phone = document.getElementById('phone-number');
 const password = document.getElementById('password');
-const passwordError = document.querySelector('#password + span.password');
+const passwordError = document.querySelector('#password + span.error');
 const confirmPassword = document.getElementById('confirm-password');
-const confirmPasswordError = document.querySelector('#confirm-password + span.password');
+const confirmPasswordError = document.querySelector('#confirm-password + span.error');
 
 password.addEventListener('input', (event) => {
     if (password.validity.valid) {
