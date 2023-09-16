@@ -1,7 +1,7 @@
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
-const emailError = document.querySelector('#mail + span.error');
+const emailError = document.querySelector('#email + span.error');
 const phone = document.getElementById('phone-number');
 const password = document.getElementById('password');
 const passwordError = document.querySelector('#password + span.error');
