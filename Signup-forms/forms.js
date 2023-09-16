@@ -1,3 +1,4 @@
+// Validation Elements
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
@@ -73,3 +74,19 @@ function validatePassword() {
     }
 }
 
+//Mobile/Desktop Formatting elements
+const flexBox = document.getElementById('flexbox-container');
+const logoContainer = document.getElementById('logo-container');
+const logoBackground = document.getElementById('logo-background');
+const logoBackgroundSource = document.getElementById('background-source');
+const signupContainer = document.getElementById('signup-container');
+const mobileElements = [flexBox, logoContainer, logoBackground, logoBackgroundSource, signupContainer]
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth < 860) {
+        mobileElements.forEach(classList.add('mobile'))
+    }
+    if (window.innerWidth > 860) {
+        mobileElements.forEach(classList.remove('mobile'))
+    }
+})

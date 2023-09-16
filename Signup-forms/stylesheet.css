@@ -33,12 +33,12 @@
 	margin: 0;
 }
 
-#flex-container {
+#flexbox-container {
 	height: 100vh;
     display: flex;
 	border: solid black 1px;
 }
-.mobile#flex-container {
+.mobile#flexbox-container {
     flex-direction: column;
 }
 
@@ -175,7 +175,7 @@ input:focus:invalid {
 	border-radius: 12px;
 	padding: 16px;
 	margin-bottom: 2rem;
-	width: 30%;
+	width: 60%;
 }
 
 a {
