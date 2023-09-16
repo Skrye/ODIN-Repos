@@ -10,10 +10,13 @@ const confirmPasswordError = document.querySelector('#confirm-password + span.er
 const formData = document.querySelector("form");
 
 password.addEventListener('input', (event) => {
-    if (password.validity.valid) {
+    if (password.validity.valid && confirmPassword.validity.valid) {
         password.textContent = '';
         password.className = '';
         passwordError.className = '';
+        passwordError.textContent = '';
+        confirmPasswordError.className = '';
+        confirmPasswordError.textContent = '';
     } else {
         password.className = 'active error';
         validatePassword();
@@ -25,6 +28,7 @@ email.addEventListener('input', (event) => {
     if (email.validity.valid) {
         email.textContent = '';
         email.className = '';
+        emailError.textContent = '';
         emailError.className = '';
     } else {
         email.className = 'active error';
