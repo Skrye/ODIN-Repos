@@ -13,6 +13,7 @@ password.addEventListener('input', (event) => {
     if (password.validity.valid) {
         password.textContent = '';
         password.className = '';
+        passwordError.className = '';
     } else {
         password.className = 'active error';
         validatePassword();
@@ -24,6 +25,7 @@ email.addEventListener('input', (event) => {
     if (email.validity.valid) {
         email.textContent = '';
         email.className = '';
+        emailError.className = '';
     } else {
         email.className = 'active error';
         showError();
@@ -44,25 +46,25 @@ formData.addEventListener('submit', (event) => {
 
 function showError() {
     if (email.validity.valueMissing) {
-        emailError.setCustomValidity = 'You need to enter an email address.';
+        emailError.textContent = 'You need to enter an email address.';
     } else if (email.validity.typeMismatch) {
-        emailError.setCustomValidity = 'Entered value needs to be an email address.';
+        emailError.textContent = 'Entered value needs to be an email address.';
     } else if (email.validity.tooShort) {
-        emailError.setCustomValidity = `Email should be at ${email.minLength} characters; you entered ${email.value.length}.`;
+        emailError.textContent = `Email should be at ${email.minLength} characters; you entered ${email.value.length}.`;
     }
     emailError.className = "error active";
 }
 
 function validatePassword() {
     if (password.validity.valueMissing) {
-        passwordError.setCustomValidity = 'You need to enter a password at least 8 characters in length, minimum one upper and lowercase letter, and at least one number.';
+        passwordError.textContent = 'You need to enter a password at least 8 characters in length, minimum one upper and lowercase letter, and at least one number.';
     } else if (password.validity.typeMismatch) {
-        passwordError.setCustomValidity = 'Please enter a valid password.';
+        passwordError.textContent = 'Please enter a valid password.';
     } else if (password.validity.tooShort) {
-        passwordError.setCustomValidity = `Password should be at ${password.minLength} characters; you entered ${password.value.length}.`;
+        passwordError.textContent = `Password should be at ${password.minLength} characters; you entered ${password.value.length}.`;
     }
     if (confirmPassword.value !== password.value) {
-        confirmPasswordError.setCustomValidity = 'Passwords do not match.';
+        confirmPasswordError.textContent = 'Passwords do not match.';
         confirmPasswordError.className = 'error active';
     }
 }
