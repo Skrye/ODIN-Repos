@@ -60,7 +60,7 @@ function validatePassword() {
     } else if (password.validity.tooShort) {
         passwordError.setCustomValidity = `Password should be at ${password.minLength} characters; you entered ${password.value.length}.`;
     }
-    if (confirmPassword.value != password.value) {
+    if (confirmPassword.value !== password.value) {
         confirmPasswordError.setCustomValidity = 'Passwords do not match.';
         confirmPasswordError.className = 'error active';
     }
