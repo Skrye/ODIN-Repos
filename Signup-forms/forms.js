@@ -30,7 +30,7 @@ email.addEventListener('input', (event) => {
     }
 });
 
-formData.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
     if (!email.validity.valid) {
         showError();
         event.preventDefault();
