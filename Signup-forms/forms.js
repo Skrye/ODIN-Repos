@@ -7,7 +7,7 @@ const password = document.getElementById('password');
 const passwordError = document.querySelector('#password + span.error');
 const confirmPassword = document.getElementById('confirm-password');
 const confirmPasswordError = document.querySelector('#confirm-password + span.error');
-const form = document.querySelector("form");
+const formData = document.querySelector("form");
 
 password.addEventListener('input', (event) => {
     if (password.validity.valid) {
