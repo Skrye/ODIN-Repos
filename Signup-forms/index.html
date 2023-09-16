@@ -38,7 +38,6 @@
           <label for="first-name">
             <span>First Name:</span>
             <input type="text" id="first-name" name="first-name" autocomplete="given-name" required />
-            <span class="error" aria-live="polite"></span>
           </label>
 
           <label for="email">
@@ -47,19 +46,30 @@
             <span class="error" aria-live="polite"></span>
           </label>
   
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+          <label for="password">
+            <span>Password:</span>
+            <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" />
+            <span class="error" aria-live="polite"></span>
+          </label>
         </div>
           
         <div class="column">
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last-name" autocomplete="family-name" required />
+          <label for="last-name">
+            <span>Last Name:</span>
+            <input type="text" id="last-name" name="last-name" autocomplete="family-name" required />
+          </label>
   
-          <label for="phone-number">Phone Number:</label>
-         <input type="tel" id="phone-number" autocomplete="tel" required minlength="10" maxlength="10" />
+          <label for="phone-number">
+            <span>Phone Number:</span>
+            <input type="tel" id="phone-number" autocomplete="tel" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" />
+            <span class="error" aria-live="polite"></span>
+          </label>
   
-         <label for="confirm-password">Confirm Password:</label>
-         <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required />
+         <label for="confirm-password">
+          <span>Confirm Password:</span>
+          <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required />
+          <span class="error" aria-live="polite"></span>
+        </label>
         </div>
 
       </div>
