@@ -86,11 +86,11 @@ window.addEventListener('resize', () => {
     if (window.innerWidth < 860) {
         mobileElements.forEach((element) => {
             element.classList.add('mobile');
-        }
+        })
     }
     if (window.innerWidth > 860) {
         mobileElements.forEach((element) => {
             element.classList.remove('mobile');
-        }
+        })
     }
 })
