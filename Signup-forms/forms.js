@@ -84,9 +84,13 @@ const mobileElements = [flexBox, logoContainer, logoBackground, logoBackgroundSo
 
 window.addEventListener('resize', () => {
     if (window.innerWidth < 860) {
-        mobileElements.forEach().classList.add('mobile')
+        mobileElements.forEach((element) => {
+            element.classList.add('mobile');
+        }
     }
     if (window.innerWidth > 860) {
-        mobileElements.forEach().classList.remove('mobile')
+        mobileElements.forEach((element) => {
+            element.classList.remove('mobile');
+        }
     }
 })
