@@ -83,7 +83,7 @@ const logoBackgroundSource = document.getElementById('background-source');
 const signupContainer = document.getElementById('signup-container');
 const mobileElements = [flexBox, logoContainer, logoBackground, logoTextBox, logoBackgroundSource, signupContainer]
 
-window.addEventListener('resize', () => {
+const resize = function() {
     if (window.innerWidth < 860) {
         mobileElements.forEach((element) => {
             element.classList.add('mobile');
@@ -94,4 +94,7 @@ window.addEventListener('resize', () => {
             element.classList.remove('mobile');
         })
     }
-})
+}
+
+window.onload = resize();
+window.onresize = resize();
