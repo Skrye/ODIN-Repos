@@ -96,5 +96,5 @@ const mobileFormat = function() {
     }
 }
 
-window.onload = resize();
-window.addEventListener ('resize', mobileFormat());
+window.addEventListener('load', mobileFormat);
+window.addEventListener('resize', mobileFormat);
