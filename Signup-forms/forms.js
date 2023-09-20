@@ -78,9 +78,10 @@ function validatePassword() {
 const flexBox = document.getElementById('flexbox-container');
 const logoContainer = document.getElementById('logo-container');
 const logoBackground = document.getElementById('logo-background');
+const logoTextBox = document.getElementById('logo-text-box');
 const logoBackgroundSource = document.getElementById('background-source');
 const signupContainer = document.getElementById('signup-container');
-const mobileElements = [flexBox, logoContainer, logoBackground, logoBackgroundSource, signupContainer]
+const mobileElements = [flexBox, logoContainer, logoBackground, logoTextBox, logoBackgroundSource, signupContainer]
 
 window.addEventListener('resize', () => {
     if (window.innerWidth < 860) {

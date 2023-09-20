@@ -69,6 +69,12 @@
 	width: 100%;
 	justify-content: center;
 }
+.mobile#logo-text-box {
+	position: fixed;
+	left: 0;
+	width: 100vw;
+	padding-left: 10vw;
+}
 
 #logo-background {
 	position: absolute;
@@ -78,7 +84,7 @@
 }
 .mobile#logo-background {
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 #background-source {
@@ -93,8 +99,9 @@
 	text-decoration-color: black;
 }
 .mobile#background-source {
-	position: relative;
-	width: 100;
+	position: fixed;
+	width: 100vw;
+	top: 66.5vh;
 }
 
 #signup-container {
@@ -103,6 +110,9 @@
 	width: 65%;
 	background: lightgray;
 	justify-content: space-evenly;
+}
+.mobile#signup-container {
+    width: 100vw;
 }
 
 #signup-header {
@@ -115,7 +125,7 @@
 	justify-content: space-evenly;
 	background: white;
 	padding: 1rem;
-	height: 30%;
+	height: 40%;
 	box-shadow: 2px 5px 5px slategray;
 	align-content: center;
 	flex-wrap: wrap;
