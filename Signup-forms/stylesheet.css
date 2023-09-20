@@ -116,8 +116,6 @@
 	margin: 2rem;
 	display: flex;
 	flex-direction: column;
-}
-.mobile#signup-header {
 	align-items: center;
 }
 
@@ -127,7 +125,6 @@
 	justify-content: space-evenly;
 	background: white;
 	padding: 1rem;
-	height: 40%;
 	box-shadow: 2px 5px 5px slategray;
 	align-content: center;
 	flex-wrap: wrap;
@@ -138,9 +135,10 @@
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	flex-wrap: wrap;
 	align-content: center;
 }
+
 
 label {
 	display: flex;
@@ -173,10 +171,8 @@ input:focus:invalid {
 #signup-submit {
 	display: flex;
 	flex-direction: column;
-	margin-top: 1rem;
-	margin-left: 2rem;
-}
-.mobile#signup-submit {
+	margin: 2rem;
+	flex-wrap: wrap;
 	align-items: center;
 }
 
