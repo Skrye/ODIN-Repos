@@ -69,6 +69,9 @@
 	width: 100%;
 	justify-content: center;
 }
+.mobile#logo-text-box {
+	position: fixed;
+}
 
 #logo-background {
 	position: absolute;
@@ -94,7 +97,7 @@
 }
 .mobile#background-source {
 	position: relative;
-	width: 100;
+	width: 100%;
 }
 
 #signup-container {
@@ -118,7 +121,7 @@
 	justify-content: space-evenly;
 	background: white;
 	padding: 1rem;
-	height: 30%;
+	height: 40%;
 	box-shadow: 2px 5px 5px slategray;
 	align-content: center;
 	flex-wrap: wrap;
