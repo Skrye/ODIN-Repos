@@ -71,7 +71,7 @@
 	justify-content: center;
 }
 .mobile#logo-text-box {
-	position: fixed;
+	position: absolute;
 }
 
 #logo-background {
