@@ -29,7 +29,7 @@
 * {
 	font-family: 'Crimson Text', serif;
 	/* font-family: 'Roboto', sans-serif; */
-	font-size: 1.2rem;
+	font-size: 1.1em;
 	margin: 0;
 }
 
@@ -113,7 +113,12 @@
 }
 
 #signup-header {
-	margin-left: 2rem;
+	margin: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+.mobile#signup-header {
+	align-items: center;
 }
 
 #signup-form {
@@ -170,6 +175,9 @@ input:focus:invalid {
 	flex-direction: column;
 	margin-top: 1rem;
 	margin-left: 2rem;
+}
+.mobile#signup-submit {
+	align-items: center;
 }
 
 #create-account {

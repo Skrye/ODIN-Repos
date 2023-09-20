@@ -81,7 +81,9 @@ const logoBackground = document.getElementById('logo-background');
 const logoTextBox = document.getElementById('logo-text-box');
 const logoBackgroundSource = document.getElementById('background-source');
 const signupContainer = document.getElementById('signup-container');
-const mobileElements = [flexBox, logoContainer, logoBackground, logoTextBox, logoBackgroundSource, signupContainer]
+const signupHeader = document.getElementById('signup-header');
+const signupSubmit = document.getElementById('signupSubmit');
+const mobileElements = [flexBox, logoContainer, logoBackground, logoTextBox, logoBackgroundSource, signupContainer, signupHeader, signupSubmit]
 
 window.addEventListener('resize', () => {
     if (window.innerWidth < 860) {
