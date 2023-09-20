@@ -83,7 +83,7 @@ const logoBackgroundSource = document.getElementById('background-source');
 const signupContainer = document.getElementById('signup-container');
 const mobileElements = [flexBox, logoContainer, logoBackground, logoTextBox, logoBackgroundSource, signupContainer]
 
-const mobileFormat = function() {
+const mobileFormat = () => {
     if (window.innerWidth < 860) {
         mobileElements.forEach((element) => {
             element.classList.add('mobile');
