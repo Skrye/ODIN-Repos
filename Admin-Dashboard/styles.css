@@ -1,19 +1,26 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
 }
 
 .header {
     display: grid;
     grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: whitesmoke;
 }
 
 .sidebar {
     display: grid;
     grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    background-color: green;
 }
 
 .main {
     display: grid;
     grid-column: 2 / 3;
+    grid-row: 2 / 5;
+    background-color: lightslategray;
 }
