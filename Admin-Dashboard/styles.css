@@ -25,6 +25,16 @@
     gap: 10px;
 }
 
+.icons {
+    display: grid;
+    margin-left: 50px;
+    gap: 60px;
+}
+
+img#dashboard {
+    margin-left: -20px;
+}
+
 .main {
     display: grid;
     grid-column: 2 / 4;
