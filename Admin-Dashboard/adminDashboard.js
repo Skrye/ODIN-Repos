@@ -13,17 +13,14 @@ const loadSidebar = function() {
     const sidebarUniversal = ['Settings', 'Support', 'Privacy'];
     const sidebarItems = ['Dashboard', ...sidebarPersonal, ...sidebarUniversal];
     for (let i = 0; i < sidebarItems.length; i++) {
-        let icon = document.createElement('IMG');
-        setupIcon(icon, sidebarItems[i]);
         let button = document.createElement('button');
+        setupButton(button, sidebarItems[i])
     }
 }
 
-const setupIcon = (icon, x) => {
+const setupButton = (button, x) => {
     switch (x) {
         case '0':
-            icon.setAttribute('src', './Dashboard-Icons/view-dashboard.svg');
-            icon.setAttribute('alt', 'view-dashboard-icon');
             break;
 
         default:
