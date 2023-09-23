@@ -15,10 +15,7 @@ const loadSidebar = function() {
     for (let i = 0; i < sidebarItems.length; i++) {
         let icon = document.createElement('IMG');
         setupIcon(icon, sidebarItems[i]);
-        attachIcon(icon, sidebarItems[i]);
         let button = document.createElement('button');
-        setupButton(button, sidebarItems[i]);
-        attachButton(button, sidebarItems[i]);
     }
 }
 
