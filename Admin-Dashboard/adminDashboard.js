@@ -14,12 +14,25 @@ const loadSidebar = function() {
     const sidebarItems = ['Dashboard', ...sidebarPersonal, ...sidebarUniversal];
     for (let i = 0; i < sidebarItems.length; i++) {
         let icon = document.createElement('IMG');
+        setupIcon(icon, sidebarItems[i]);
+        attachIcon(icon, sidebarItems[i]);
         let button = document.createElement('button');
+        setupButton(button, sidebarItems[i]);
+        attachButton(button, sidebarItems[i]);
     }
 }
 
-const setProperties = () => {
-	
+const setupIcon = (icon, x) => {
+    switch (x) {
+        case '0':
+            icon.setAttribute('src', './Dashboard-Icons/view-dashboard.svg');
+            icon.setAttribute('alt', 'view-dashboard-icon');
+            break;
+
+        default:
+            return null;
+    }
+    sidebarIcons.appendChild(icon);
 }
 
 init();
