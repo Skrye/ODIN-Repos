@@ -25,25 +25,19 @@
     gap: 10px;
 }
 
-.icons {
-    display: grid;
-    margin-left: 50px;
-    gap: 60px;
+#dashboard {
+    margin: 20px 0 80px 30px;
 }
 
-img#dashboard {
-    margin-left: -20px;
-}
-
-.buttons {
-    display: grid;
-    gap: 60px;
+#communities {
+    margin-bottom: 80px;
 }
 
 button {
     background-color: green;
     border: none;
     color: black;
+    text-align: start;
 }
 
 .main {
