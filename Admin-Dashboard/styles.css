@@ -20,7 +20,7 @@
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     background-color: green;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2fr;
     grid-auto-rows: auto;
     gap: 10px;
 }
@@ -33,6 +33,17 @@
 
 img#dashboard {
     margin-left: -20px;
+}
+
+.buttons {
+    display: grid;
+    gap: 60px;
+}
+
+button {
+    background-color: green;
+    border: none;
+    color: black;
 }
 
 .main {
