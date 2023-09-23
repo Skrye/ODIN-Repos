@@ -20,6 +20,9 @@
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     background-color: green;
+    grid-template-columns: 1fr 4fr;
+    grid-auto-rows: auto;
+    gap: 10px;
 }
 
 .main {
