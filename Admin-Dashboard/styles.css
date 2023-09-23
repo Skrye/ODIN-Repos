@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-size: 1.2rem;
 }
 
 .container {
@@ -18,22 +19,26 @@
 .sidebar {
     display: grid;
     grid-column: 1 / 2;
-    grid-row: 1 / 4;
+    grid-row: 1 / -1;
     background-color: green;
     grid-template-columns: 1fr 2fr;
     grid-auto-rows: auto;
     gap: 10px;
 }
 
+.sidebar > img {
+    margin-left: 50px;
+}
+
 #dashboard {
     margin: 20px 0 80px 30px;
 }
 
-#communities {
+#communities, #privacy {
     margin-bottom: 80px;
 }
 
-button {
+.sidebar > button {
     background-color: green;
     border: none;
     color: black;
