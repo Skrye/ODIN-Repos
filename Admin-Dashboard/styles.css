@@ -14,12 +14,45 @@
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     background-color: whitesmoke;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 30% 60%;
     gap: 20px;
 }
 
 .header > * {
     display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+#searchbar {
+    flex: 1 1 auto;
+}
+
+.header-profile > p {
+    align-self: center;
+}
+
+.header-greeting {
+    justify-content: flex-start;
+}
+
+.greeting {
+    align-self: center;
+    margin-left: 10px;
+}
+
+.header-buttons {
+    align-items: flex-end;
+    align-content: space-between;
+}
+
+.header-buttons > button {
+    border: none;
+    border-radius: 30px;
+    background: green;
+    color: white;
+    padding: 0.5rem 1rem;
 }
 
 .sidebar {
@@ -47,7 +80,7 @@
 .sidebar > button {
     background-color: green;
     border: none;
-    color: black;
+    color: white;
     text-align: start;
 }
 
@@ -55,7 +88,7 @@
     display: grid;
     grid-column: 2 / 4;
     grid-row: 2 / 4;
-    background-color: lightslategray;
+    background-color: #d4d4d4;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -73,6 +106,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: minmax(50%, auto);
+    background-color: #d4d4d4;
 }
 
 .announcements {
