@@ -14,7 +14,8 @@
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     background-color: whitesmoke;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 30% 60%;
+    gap: 20px;
 }
 
 .sidebar {
