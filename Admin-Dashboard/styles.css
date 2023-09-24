@@ -87,7 +87,7 @@
 .projects {
     display: grid;
     grid-column: 2/4;
-    grid-row: 2/4;
+    grid-row: 2/3;
     gap: 15px;
     background-color: #d4d4d4;
     grid-template-rows: 1fr 1fr 1fr;
@@ -96,8 +96,12 @@
 
 .project {
     display: grid;
-    grid-template-rows: 10% 60% 20%;
-    padding: 20px;   
+    padding: 20px;
+    grid-auto-rows: auto;
+    background-color: whitesmoke;
+    box-shadow: green -10px 0px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 .favorite-follow-share {
