@@ -18,6 +18,10 @@
     gap: 20px;
 }
 
+.header > * {
+    display: flex;
+}
+
 .sidebar {
     display: grid;
     grid-column: 1 / 2;
