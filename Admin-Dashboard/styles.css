@@ -154,5 +154,16 @@
     display: grid;
     grid-auto-rows: auto;
     grid-template-columns: 20% 80%;
+}
+
+.trending {
     background-color: whitesmoke;
+}
+
+.trending.icon {
+    border-radius: 5px 0 0 5px;
+}
+
+.trending.handle {
+    border-radius: 0 5px 5px 0;
 }
