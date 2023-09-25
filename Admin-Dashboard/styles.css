@@ -153,6 +153,7 @@ h1#announcement-header {
     background-color: whitesmoke;
     border-radius: 10px;
     padding: 10px;
+    gap: 10px;
 }
 
 .announcements > p {
