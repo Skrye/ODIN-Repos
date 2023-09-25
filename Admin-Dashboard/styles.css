@@ -167,20 +167,22 @@
 
 .trending {
     background-color: whitesmoke;
+    justify-items: start;
+    align-content: center;
 }
 
 .trending.icon.top {
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 0;
 }
 
 .trending.icon.bottom {
-    border-radius: 5px 0 0 5px;
+    border-radius: 0 0 0 5px;
 }
 
 .trending.handle.top {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 0 0;
 }
 
 .trending.handle.bottom {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 0 5px 0;
 }
