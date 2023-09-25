@@ -85,6 +85,10 @@
     text-align: start;
 }
 
+.project-header {
+    font-size: larger;
+}
+
 .projects {
     display: grid;
     grid-column: 2/4;
@@ -149,6 +153,10 @@ h1#announcement-header {
     background-color: whitesmoke;
     border-radius: 10px;
     padding: 5px;
+}
+
+.announcements > p {
+    font-size: smaller;
 }
 
 h1#trending-header {
