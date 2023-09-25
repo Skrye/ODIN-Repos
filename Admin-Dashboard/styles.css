@@ -92,7 +92,7 @@
     gap: 15px;
     padding: 20px;
     background-color: #d4d4d4;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -144,10 +144,15 @@
     grid-auto-rows: auto;
 }
 
+.announcement {
+    background-color: whitesmoke;
+}
+
 .trending {
     grid-column: 1/2;
     grid-row: 2/3;
     display: grid;
     grid-auto-rows: auto;
     grid-template-columns: 20% 80%;
+    background-color: whitesmoke;
 }
