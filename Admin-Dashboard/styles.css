@@ -67,6 +67,7 @@
 
 .sidebar > img {
     margin-left: 50px;
+    align-self: center;
 }
 
 #dashboard {
@@ -105,14 +106,20 @@
     border-radius: 5px;
 }
 
+.project > h1 {
+    font-size: xx-large;
+    align-self: flex-start;
+}
+
 .favorite-follow-share {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .favorite-follow-share > img {
-    width: 20%;
+    max-height: 0px;
 }
 
 .project-info {
