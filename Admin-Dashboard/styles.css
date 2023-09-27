@@ -37,7 +37,7 @@
     justify-content: flex-start;
 }
 
-.greeting {
+.greeting-username {
     align-self: center;
     margin-left: 10px;
 }
@@ -187,6 +187,10 @@ h1#trending-header {
     border-radius: 10px;
     padding: 10px;
     gap: 10px;
+}
+
+p.greeting {
+    font-size: smaller;
 }
 
 p.username {
