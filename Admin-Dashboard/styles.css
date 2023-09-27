@@ -15,7 +15,7 @@
     grid-row: 1 / 2;
     background-color: whitesmoke;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 30% 60%;
+    grid-template-rows: 40% 60%;
     gap: 20px;
 }
 
@@ -44,7 +44,9 @@
 
 .header-buttons {
     align-items: flex-end;
-    align-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .header-buttons > button {
@@ -190,3 +192,4 @@ h1#trending-header {
 p.username {
     font-weight: bold;
 }
+
