@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="libraryApp.js"></script>
+</head>
+<body>
+    <div class="current-library">
+        <table id="library-table">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Page Count</th>
+                <th>Published Date</th>
+                <th>Genre</th>
+            </tr>
+        </table>
+    </div>
+    <form action="./libraryApp.js" method="post" id="add-to-library">
+        <label for="title">
+            <span></span>
+            <input type="text" />
+            <span class="error" aria-live="polite"></span>
+        </label>
+        <label for="author">
+            <span></span>
+            <input type="text" />
+            <span class="error" aria-live="polite"></span>
+        </label>
+        <label for="page-count">
+            <span></span>
+            <input type="number" />
+            <span class="error" aria-live="polite"></span>
+        </label>
+        <label for="published-date">
+            <span></span>
+            <input type="date" />
+            <span class="error" aria-live="polite"></span>
+        </label>
+        <label for="genre">
+            <span></span>
+            <input type="text" />
+            <span class="error" aria-live="polite"></span>
+        </label>
+    </form>
+</body>
+</html>
