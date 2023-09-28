@@ -1,13 +1,3 @@
-const myLibrary = [theHobbit, lastBookInTheUniverse];
-
-function Book() {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pagecount;
-    this.publishedDate = publishedDate;
-    this.genre = genre;
-}
-
 const theHobbit = {
     title: 'The Hobbit',
     author: 'JRR Tolkien',
@@ -23,6 +13,16 @@ const lastBookInTheUniverse = {
     publishedDate: '2002-03-1',
     genre: 'Dystopian'
 };
+
+const myLibrary = [theHobbit, lastBookInTheUniverse];
+
+function Book() {
+    this.title = title;
+    this.author = author;
+    this.pageCount = pagecount;
+    this.publishedDate = publishedDate;
+    this.genre = genre;
+}
 
 function addBookToLibrary() {
  // grab input from fields, then ombine those fields into a new Book, add book to myLibrary array
