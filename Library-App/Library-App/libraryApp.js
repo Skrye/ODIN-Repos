@@ -14,8 +14,6 @@ const lastBookInTheUniverse = {
     genre: 'Dystopian'
 };
 
-const myLibrary = [theHobbit, lastBookInTheUniverse];
-
 function Book() {
     this.title = title;
     this.author = author;
@@ -24,8 +22,10 @@ function Book() {
     this.genre = genre;
 }
 
+const myLibrary = [theHobbit, lastBookInTheUniverse];
+
 function addBookToLibrary() {
- // grab input from fields, then ombine those fields into a new Book, add book to myLibrary array
+ // grab input from fields, then combine those fields into a new Book, add book to myLibrary array
 }
 
 const libraryDisplay = document.getElementById('library-table');

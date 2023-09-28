@@ -19,32 +19,39 @@
             </tr>
         </table>
     </div>
-    <form action="./libraryApp.js" method="post" id="add-to-library">
-        <label for="title">
-            <span></span>
-            <input type="text" />
-            <span class="error" aria-live="polite"></span>
-        </label>
-        <label for="author">
-            <span></span>
-            <input type="text" />
-            <span class="error" aria-live="polite"></span>
-        </label>
-        <label for="page-count">
-            <span></span>
-            <input type="number" />
-            <span class="error" aria-live="polite"></span>
-        </label>
-        <label for="published-date">
-            <span></span>
-            <input type="date" />
-            <span class="error" aria-live="polite"></span>
-        </label>
-        <label for="genre">
-            <span></span>
-            <input type="text" />
-            <span class="error" aria-live="polite"></span>
-        </label>
-    </form>
+    <div class="modal-container">
+        <button onclick="document.getElementById('form-add-to-library').style.display='block'" class="modal-button">Add a new book to the library?</button>
+        <div id="form-add-to-library" class="modal-form">
+            <span onclick="document.getElementById('form-add-to-library').style.display='none'" class="close-modal">x</span>
+            <form action="./libraryApp.js" method="post" id="add-to-library">
+                <label for="title">
+                    <span>Title</span>
+                    <input type="text" id="title" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="author">
+                    <span>Author</span>
+                    <input type="text" id="author" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="page-count">
+                    <span>Page Count</span>
+                    <input type="number" id="page-count" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="published-date">
+                    <span>Published Date</span>
+                    <input type="date" id="published-date" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="genre">
+                    <span>Genre</span>
+                    <input type="text" id="genre" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <input type="submit" id="submit-to-library" value="Submit">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
