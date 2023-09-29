@@ -29,10 +29,10 @@ function addBookToLibrary() {
  // grab input from fields, then combine those fields into a new Book, add book to myLibrary array
 }
 */
-const submitNewBook = document.getElementById('submit-to-library');
+const submitNewBook = document.getElementById('add-to-library');
 
-submitNewBook.addEventListener('submit', (event) => {
-    event.preventDefault();
+submitNewBook.addEventListener('submit', (e) => {
+    e.preventDefault();
 
     const FD = new FormData(submitNewBook);
 
