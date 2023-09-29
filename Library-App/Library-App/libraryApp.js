@@ -25,8 +25,19 @@ submitNewBook.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const FD = new FormData(submitNewBook);
+    
+    const newBook = Object.create(theHobbit);
 
-    console.table(FD)
+    newBook.title = `${FD[0][1]}`;
+    newBook.author = `${FD[1][1]}`;
+    newBook.pageCount = `${FD[2][1]}`;
+    newBook.publishedDate = `${FD[3][1]}`;
+    newBook.genre = `${FD[4][1]}`;
+
+    console.table(newBook);
+
+    myLibrary.push(newBook);
+    displayLibrary();
 });
 
 
