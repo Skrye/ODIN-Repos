@@ -1,25 +1,15 @@
-const theHobbit = {
-    title: 'The Hobbit',
-    author: 'JRR Tolkien',
-    pageCount: 310,
-    publishedDate: '1937-09-21',
-    genre: 'Fantasy'
-};
+const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy');
 
-const lastBookInTheUniverse = {
-    title: 'The Last Book in the Universe',
-    author: 'Rodman Philbrick',
-    pageCount: 240,
-    publishedDate: '2002-03-1',
-    genre: 'Dystopian'
-};
+const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-1', 'Dystopian');
 
-function Book() {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pagecount;
-    this.publishedDate = publishedDate;
-    this.genre = genre;
+class Book {
+    constructor(title, author, pageCount, publishedDate, genre) {
+        this.title = title;
+        this.author = author;
+        this.pageCount = pagecount;
+        this.publishedDate = publishedDate;
+        this.genre = genre;
+    }
 }
 
 const myLibrary = [theHobbit, lastBookInTheUniverse];
@@ -36,9 +26,6 @@ submitNewBook.addEventListener('submit', (e) => {
 
     const FD = new FormData(submitNewBook);
 
-    for (item of FD) {
-        console.log(item[0], item[1]);
-    }
 });
 
 
