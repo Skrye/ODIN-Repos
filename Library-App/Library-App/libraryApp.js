@@ -31,16 +31,14 @@ function addBookToLibrary() {
 */
 const submitNewBook = document.getElementById('submit-to-library');
 
-window.addEventListener('load', () => {
-    submitNewBook.addEventListener('submit', (event) => {
-        event.preventDefault();
+submitNewBook.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-        const FD = new FormData(submitNewBook);
+    const FD = new FormData(submitNewBook);
 
-        for(item of FD) {
-            console.log(item[0], item[1]);
-        }
-    });
+    for (item of FD) {
+        console.log(item[0], item[1]);
+    }
 });
 
 
@@ -52,7 +50,7 @@ const libraryTable = document.getElementById('library-table');
 function displayLibrary() {
     for (let i = 0; i < myLibrary.length; i++) {
         let newBookRow = document.createElement('tr');
-        newBookRow.setAttribute('id', `Book ${i}`);
+        newBookRow.setAttribute('id', `${myLibrary[i].title}`);
         libraryTable.appendChild(newBookRow);
         let titleCell = document.createElement('td');
         titleCell.innerHTML = `${myLibrary[i].title}`;

@@ -20,10 +20,10 @@
         </table>
     </div>
     <div class="modal-container">
-        <button onclick="document.getElementById('form-add-to-library').style.display='flex'" class="open-modal">Add a new book to the library?</button>
+        <button onclick="document.querySelector('.modal-form').style.display='flex'" class="open-modal">Add a new book to the library?</button>
     </div>
     <div class="modal-form">
-        <span onclick="document.getElementById('form-add-to-library').style.display='none'" class="close-modal">x</span>
+        <span onclick="document.querySelector('.modal-form').style.display='none'" class="close-modal">x</span>
         <form id="add-to-library">
             <label for="title">
                 <span>Title</span>
