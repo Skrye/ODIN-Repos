@@ -1,7 +1,3 @@
-const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy');
-
-const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian');
-
 class Book {
     constructor(title, author, pageCount, publishedDate, genre) {
         this.title = title;
@@ -11,6 +7,10 @@ class Book {
         this.genre = genre;
     }
 };
+
+const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy');
+
+const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian');
 
 console.table(theHobbit);
 
