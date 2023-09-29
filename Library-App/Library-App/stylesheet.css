@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.modal-form { 
+    flex-direction: column;
+    width: min-content;
+    align-self: center;
+    background-color: slategray;
+    padding: 20px;
+}
+
+span.modal-close {
+    align-self: flex-end;
+}

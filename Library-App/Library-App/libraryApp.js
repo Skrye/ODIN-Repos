@@ -28,13 +28,58 @@ function addBookToLibrary() {
  // grab input from fields, then combine those fields into a new Book, add book to myLibrary array
 }
 
-const libraryDisplay = document.getElementById('library-table');
+const submitNewBook = document.getElementById('submit-to-library');
+
+window.addEventListener('load', () => {
+    function sendData() {
+
+        let title = document.getElementById('title');
+        let author = document.getElementById('author');
+        let pageCount = document.getElementById('page-count');
+        let publishedDate = document.getElementById('published-date');
+        let genre = document.getElementById('genre');
+
+        const XHR = new XMLHttpRequest();
+        const newBookForm = getElementById('add-to-library');
+        const FD = new FormData(newBookForm);
+
+        // on successful submit
+        XHR.addEventListener('load', (event) => {
+            alert('New book added succesfully.');
+            title.value = '';
+            author.value = '';
+            pageCount.value = '';
+            publishedDate.value = '';
+            genre.value = '';
+        });
+        
+        // on fialed submit/error
+        XHR.addEventListener('error', (event) => {
+            alert('Oops! Something went wrong.');
+        });
+    
+        XHR.open('POST', '')
+    
+        XHR.send(FD);
+    }
+
+    newBookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        sendData();
+    });
+});
+
+
+
+
+
+const libraryTable = document.getElementById('library-table');
 
 function displayLibrary() {
     for (let i = 0; i < myLibrary.length; i++) {
         let newBookRow = document.createElement('tr');
         newBookRow.setAttribute('id', `Book ${i}`);
-        libraryDisplay.appendChild(newBookRow);
+        libraryTable.appendChild(newBookRow);
         let titleCell = document.createElement('td');
         titleCell.innerHTML = `${myLibrary[i].title}`;
         newBookRow.appendChild(titleCell);
