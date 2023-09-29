@@ -9,32 +9,28 @@ class Book {
 };
 
 const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy');
-
 const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian');
 
-const myLibrary = [theHobbit, lastBookInTheUniverse];
+let myLibrary = [theHobbit, lastBookInTheUniverse];
 
-/*
-function addBookToLibrary() {
- // grab input from fields, then combine those fields into a new Book, add book to myLibrary array
-}
-*/
 const submitNewBook = document.getElementById('add-to-library');
 
 submitNewBook.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const FD = new FormData(submitNewBook);
-    
+    let newBookArray = [];
+    for (item of FD) {
+        newBookArray.push(item[1])
+    }
+
     const newBook = Object.create(theHobbit);
 
-    newBook.title = `${FD[0][1]}`;
-    newBook.author = `${FD[1][1]}`;
-    newBook.pageCount = `${FD[2][1]}`;
-    newBook.publishedDate = `${FD[3][1]}`;
-    newBook.genre = `${FD[4][1]}`;
-
-    console.table(newBook);
+    newBook.title = `${newBookArray[0]}`;
+    newBook.author = `${newBookArray[1]}`;
+    newBook.pageCount = `${newBookArray[2]}`;
+    newBook.publishedDate = `${newBookArray[3]}`;
+    newBook.genre = `${newBookArray[4]}`;
 
     myLibrary.push(newBook);
     displayLibrary();
@@ -67,6 +63,7 @@ function displayLibrary() {
         genreCell.innerHTML = `${myLibrary[i].genre}`;
         newBookRow.appendChild(genreCell);
     }
+    myLibrary = [];
 }
 
 displayLibrary();
