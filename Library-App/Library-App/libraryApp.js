@@ -24,48 +24,22 @@ function Book() {
 
 const myLibrary = [theHobbit, lastBookInTheUniverse];
 
+/*
 function addBookToLibrary() {
  // grab input from fields, then combine those fields into a new Book, add book to myLibrary array
 }
-
+*/
 const submitNewBook = document.getElementById('submit-to-library');
 
 window.addEventListener('load', () => {
-    function sendData() {
-
-        let title = document.getElementById('title');
-        let author = document.getElementById('author');
-        let pageCount = document.getElementById('page-count');
-        let publishedDate = document.getElementById('published-date');
-        let genre = document.getElementById('genre');
-
-        const XHR = new XMLHttpRequest();
-        const newBookForm = getElementById('add-to-library');
-        const FD = new FormData(newBookForm);
-
-        // on successful submit
-        XHR.addEventListener('load', (event) => {
-            alert('New book added succesfully.');
-            title.value = '';
-            author.value = '';
-            pageCount.value = '';
-            publishedDate.value = '';
-            genre.value = '';
-        });
-        
-        // on fialed submit/error
-        XHR.addEventListener('error', (event) => {
-            alert('Oops! Something went wrong.');
-        });
-    
-        XHR.open('POST', '')
-    
-        XHR.send(FD);
-    }
-
-    newBookForm.addEventListener('submit', (event) => {
+    submitNewBook.addEventListener('submit', (event) => {
         event.preventDefault();
-        sendData();
+
+        const FD = new FormData(submitNewBook);
+
+        for(item of FD) {
+            console.log(item[0], item[1]);
+        }
     });
 });
 

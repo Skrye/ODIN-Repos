@@ -22,36 +22,36 @@
     <div class="modal-container">
         <button onclick="document.getElementById('form-add-to-library').style.display='flex'" class="open-modal">Add a new book to the library?</button>
     </div>
-    <div id="form-add-to-library" class="modal-form">
+    <div class="modal-form">
         <span onclick="document.getElementById('form-add-to-library').style.display='none'" class="close-modal">x</span>
-        <form action="./libraryApp.js" method="post" id="add-to-library">
+        <form id="add-to-library">
             <label for="title">
                 <span>Title</span>
-                <input type="text" id="title" required />
+                <input type="text" id="title" name="title" required />
                 <span class="error" aria-live="polite"></span>
             </label>
             <br>
             <label for="author">
                 <span>Author</span>
-                <input type="text" id="author" required />
+                <input type="text" id="author" name="author" required />
                 <span class="error" aria-live="polite"></span>
             </label>
             <br>
             <label for="page-count">
                 <span>Page Count</span>
-                <input type="number" id="page-count" required />
+                <input type="number" id="page-count" name="pageCount" required />
                 <span class="error" aria-live="polite"></span>
             </label>
             <br>
             <label for="published-date">
                 <span>Published Date</span>
-                <input type="date" id="published-date" required />
+                <input type="date" id="published-date" name="publishedDate" required />
                 <span class="error" aria-live="polite"></span>
             </label>
             <br>
             <label for="genre">
                 <span>Genre</span>
-                <input type="text" id="genre" required />
+                <input type="text" id="genre" name="genre" required />
                 <span class="error" aria-live="polite"></span>
             </label>
             <br>
