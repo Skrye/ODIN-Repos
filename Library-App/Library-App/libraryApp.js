@@ -12,8 +12,6 @@ const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fant
 
 const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian');
 
-console.table(theHobbit);
-
 const myLibrary = [theHobbit, lastBookInTheUniverse];
 
 /*
@@ -28,6 +26,7 @@ submitNewBook.addEventListener('submit', (e) => {
 
     const FD = new FormData(submitNewBook);
 
+    console.table(FD)
 });
 
 
