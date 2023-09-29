@@ -12,6 +12,8 @@ class Book {
     }
 };
 
+console.table(theHobbit);
+
 const myLibrary = [theHobbit, lastBookInTheUniverse];
 
 /*
