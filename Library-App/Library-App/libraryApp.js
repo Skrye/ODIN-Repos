@@ -1,5 +1,5 @@
 class Book {
-    constructor(title, author, pageCount, publishedDate, genre) {
+    constructor(title, author, pageCount, publishedDate, genre, isRead) {
         this.title = title;
         this.author = author;
         this.pageCount = pageCount;
@@ -87,6 +87,7 @@ function displayLibrary() {
         let deleteCell = document.createElement('td');
         newBookRow.appendChild(deleteCell);
         let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'x';
         deleteCell.appendChild(deleteButton);
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
         deleteButton.addEventListener('onclick', deleteBook());
