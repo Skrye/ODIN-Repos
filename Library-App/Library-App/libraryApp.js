@@ -84,7 +84,7 @@ function displayLibrary() {
             isReadCell.innerHTML = 'No'
         }
 
-        let deleteCell = document,createElement('td');
+        let deleteCell = document.createElement('td');
         newBookRow.appendChild(deleteCell);
         let deleteButton = document.createElement('button');
         deleteCell.appendChild(deleteButton);
