@@ -94,12 +94,12 @@ function displayLibrary() {
     }
     myLibrary = [];
 }
-
+/*
 const deleteBook = (this) => {
     let toBeDeleted = document.querySelectorAll(`${this.id}`);
     for (i = toBeDeleted.length; i > 0; i--) {
         toBeDeleted[i].remove();
     }
-};
+}; */
 
 displayLibrary();
