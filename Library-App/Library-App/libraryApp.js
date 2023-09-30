@@ -90,7 +90,7 @@ function displayLibrary() {
         deleteButton.innerHTML = 'x';
         deleteCell.appendChild(deleteButton);
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
-        deleteButton.addEventListener('onclick', deleteBook());
+        // deleteButton.addEventListener('onclick', deleteBook());
     }
     myLibrary = [];
 }
