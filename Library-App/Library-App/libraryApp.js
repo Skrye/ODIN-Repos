@@ -85,6 +85,8 @@ function displayLibrary() {
         }
 
         let deleteCell = document.createElement('td');
+        deleteCell.setAttribute('id', `${myLibrary[i].title}`);
+        deleteCell.setAttribute('class', `delete-button`);
         newBookRow.appendChild(deleteCell);
         let deleteButton = document.createElement('button');
         deleteButton.innerHTML = 'x';
