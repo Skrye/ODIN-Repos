@@ -92,16 +92,18 @@ function displayLibrary() {
         deleteButton.innerHTML = 'x';
         deleteCell.appendChild(deleteButton);
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
-        // deleteButton.addEventListener('onclick', deleteBook());
+        deleteButton.onclick = function() {
+            let toBeDeleted = document.querySelectorAll(`${this.id}`);
+            for (i = toBeDeleted.length; i > 0; i--) {
+                toBeDeleted[i].remove();
+            }
+        }
     }
     myLibrary = [];
 }
 /*
 const deleteBook = (this) => {
-    let toBeDeleted = document.querySelectorAll(`${this.id}`);
-    for (i = toBeDeleted.length; i > 0; i--) {
-        toBeDeleted[i].remove();
-    }
+    
 }; */
 
 displayLibrary();
