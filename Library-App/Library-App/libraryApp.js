@@ -94,8 +94,8 @@ function displayLibrary() {
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
         deleteButton.onclick = function() {
             let toBeDeleted = document.querySelectorAll(`${this.id}`);
-            for (i = toBeDeleted.length; i > 0; i--) {
-                toBeDeleted[i].remove();
+            for(j = toBeDeleted.length - 1; j > 0; j--) {
+                toBeDeleted[j].remove();
             }
         }
     }
