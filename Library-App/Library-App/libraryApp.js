@@ -94,9 +94,7 @@ function displayLibrary() {
         deleteButton.innerHTML = 'x';
         deleteCell.appendChild(deleteButton);
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
-        deleteButton.addEventListener('click', function(){
-            deleteRow;
-        });
+        deleteButton.addEventListener('click', deleteRow);
 	}
     renderLibrary = [];
 }
