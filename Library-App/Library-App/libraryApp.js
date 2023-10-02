@@ -96,11 +96,11 @@ function displayLibrary() {
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
         deleteButton.onclick = function() {
 					let toBeDeleted = document.querySelectorAll(`#${renderLibrary[i].title}`);
-					console.table(toBeDeleted)
+					console.table(toBeDeleted);
 					for(j = toBeDeleted.length - 1; j > 0; j--) {
 						toBeDeleted[j].remove();
 					}
-    		    }
+    		    };
 			}
     renderLibrary = [];
 }
