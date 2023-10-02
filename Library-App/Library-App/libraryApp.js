@@ -12,8 +12,8 @@ class Book {
 const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy', 'true');
 const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian', 'false');
 
-const myLibrary = [theHobbit, lastBookInTheUniverse];
-let renderLibrary = [];
+let myLibrary = [theHobbit, lastBookInTheUniverse];
+
 const submitNewBook = document.getElementById('add-to-library');
 
 submitNewBook.addEventListener('submit', (e) => {
@@ -32,10 +32,8 @@ submitNewBook.addEventListener('submit', (e) => {
     newBook.pageCount = `${newBookArray[2]}`;
     newBook.publishedDate = `${newBookArray[3]}`;
     newBook.genre = `${newBookArray[4]}`;
-    newBook.isRead =  `${newBookArray[5]}`;
 
     myLibrary.push(newBook);
-    renderLibrary = myLibrary.slice(0);
     displayLibrary();
 });
 
@@ -46,39 +44,39 @@ submitNewBook.addEventListener('submit', (e) => {
 const libraryTable = document.getElementById('library-table');
 
 function displayLibrary() {
-    for (let i = 0; i < renderLibrary.length; i++) {
+    for (let i = 0; i < myLibrary.length; i++) {
 
         let newBookRow = document.createElement('tr');
-        newBookRow.setAttribute('id', `${renderLibrary[i].title}`);
+        newBookRow.setAttribute('id', `Book${[i]}`);
         libraryTable.appendChild(newBookRow);
 
         let titleCell = document.createElement('td');
-        titleCell.innerHTML = `${renderLibrary[i].title}`;
-        titleCell.setAttribute('id', `${renderLibrary[i].title}`);
+        titleCell.innerHTML = `${myLibrary[i].title}`;
+        titleCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(titleCell);
 
         let authorCell = document.createElement('td');
-        authorCell.innerHTML = `${renderLibrary[i].author}`;
-        authorCell.setAttribute('id', `${renderLibrary[i].title}`);
+        authorCell.innerHTML = `${myLibrary[i].author}`;
+        authorCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(authorCell);
 
         let pageCountCell = document.createElement('td');
-        pageCountCell.innerHTML = `${renderLibrary[i].pageCount}`;
-        pageCountCell.setAttribute('id', `${renderLibrary[i].title}`);
+        pageCountCell.innerHTML = `${myLibrary[i].pageCount}`;
+        pageCountCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(pageCountCell);
 
         let publishedDateCell = document.createElement('td');
-        publishedDateCell.innerHTML = `${renderLibrary[i].publishedDate}`;
-        publishedDateCell.setAttribute('id', `${renderLibrary[i].title}`);
+        publishedDateCell.innerHTML = `${myLibrary[i].publishedDate}`;
+        publishedDateCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(publishedDateCell);
 
         let genreCell = document.createElement('td');
-        genreCell.innerHTML = `${renderLibrary[i].genre}`;
-        genreCell.setAttribute('id', `${renderLibrary[i].title}`);
+        genreCell.innerHTML = `${myLibrary[i].genre}`;
+        genreCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(genreCell);
 
         let isReadCell = document.createElement('td');
-        isReadCell.setAttribute('id', `${renderLibrary[i].title}`);
+        isReadCell.setAttribute('id', `Book${[i]}`);
         newBookRow.appendChild(isReadCell);
         if (myLibrary[i].isRead == 'true') {
             isReadCell.innerHTML = 'Yes'
@@ -87,24 +85,22 @@ function displayLibrary() {
         }
 
         let deleteCell = document.createElement('td');
-        deleteCell.setAttribute('id', `${renderLibrary[i].title}`);
+        deleteCell.setAttribute('id', `Book${[i]}`);
         deleteCell.setAttribute('class', `delete-button`);
         newBookRow.appendChild(deleteCell);
         let deleteButton = document.createElement('button');
         deleteButton.innerHTML = 'x';
         deleteCell.appendChild(deleteButton);
         deleteButton.setAttribute('id', `${myLibrary[i].title}`);
-        deleteButton.addEventListener('click', deleteRow);
-	}
-    renderLibrary = [];
+        deleteButton.onclick = function() {
+					let toBeDeleted = document.querySelectorAll(`#Book${[i]}`);
+					console.table(toBeDeleted)
+					for(j = toBeDeleted.length - 1; j > 0; j--) {
+						toBeDeleted[j].remove();
+					}
+    		}
+			}
+    myLibrary = [];
 }
-
-const deleteRow = function () {
-    let toBeDeleted = document.querySelectorAll(`#${renderLibrary[i].title}`);
-    console.table(toBeDeleted);
-    for(j = toBeDeleted.length - 1; j > 0; j--) {
-                toBeDeleted[j].remove();
-    }
-};
 
 displayLibrary();
