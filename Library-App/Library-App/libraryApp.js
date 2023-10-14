@@ -14,7 +14,7 @@ const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman 
 
 const dialog = document.querySelector('.modal-form');
 const showButton = document.querySelector('.open-modal');
-const closeButton = document.querySelector('dialog button');
+const closeButton = document.querySelector('.close-modal');
 
 showButton.addEventListener('click', () => {
     dialog.showModal();
