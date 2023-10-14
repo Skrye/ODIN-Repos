@@ -22,10 +22,10 @@
         </table>
     </div>
     <div class="modal-container">
-        <button onclick="document.querySelector('.modal-form').style.display='flex'" class="open-modal">Add a new book to the library?</button>
+        <button class="open-modal">Add a new book to the library?</button>
         
-    <div class="modal-form">
-        <span onclick="document.querySelector('.modal-form').style.display='none'" class="close-modal">x</span>
+    <dialog class="modal-form">
+        <button class="close-modal">x</button>
         <form id="add-to-library">
             <label for="title">
                 <span>Title</span>

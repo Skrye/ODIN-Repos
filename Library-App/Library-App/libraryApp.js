@@ -12,6 +12,18 @@ class Book {
 const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy', 'true');
 const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian', 'false');
 
+const dialog = document.querySelector('.modal-form');
+const showButton = document.querySelector('.open-modal');
+const closeButton = document.querySelector('dialog button');
+
+showButton.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+closeButton.addEventListener('click', () => {
+    dialog.closest();
+})
+
 let myLibrary = [theHobbit, lastBookInTheUniverse];
 
 const submitNewBook = document.getElementById('add-to-library');
