@@ -28,7 +28,6 @@ td.delete-button {
 }
 
 .modal-form {
-    display: flex;
     flex-direction: column;
     width: min-content;
     align-self: center;
