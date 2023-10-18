@@ -21,7 +21,7 @@ showButton.addEventListener('click', () => {
 })
 
 closeButton.addEventListener('click', () => {
-    dialog.closest();
+    dialog.close();
 })
 
 let myLibrary = [theHobbit, lastBookInTheUniverse];

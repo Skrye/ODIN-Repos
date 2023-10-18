@@ -27,6 +27,14 @@ td.delete-button {
     align-items: center;
 }
 
+.modal-form {
+    flex-direction: column;
+    width: min-content;
+    align-self: center;
+    background-color: slategray;
+    padding: 20px;
+}
+
 .close-modal {
     align-self: flex-end;
 }
