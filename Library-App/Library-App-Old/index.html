@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Library</title>
+    <title>Library App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="libraryApp.js"></script>
 </head>
 <body>
-    <button class="open-modal">Add a new book to the library?</button>
+    <div class="current-library">
+        <table id="library-table">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Page Count</th>
+                <th>Published Date</th>
+                <th>Genre</th>
+                <th>Finished reading?</th>
+                <th>Delete book</th>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-container">
+        <button class="open-modal">Add a new book to the library?</button>
+        
     <dialog class="modal-form">
         <button class="close-modal">x</button>
         <form id="add-to-library">
@@ -43,5 +60,6 @@
             <input type="submit" id="submit-to-library" value="Submit">
         </form>
     </dialog>
+    </div>
 </body>
 </html>
