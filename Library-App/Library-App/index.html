@@ -9,45 +9,45 @@
     <div class="flex-container">
         <h1>My Library</h1>
         <div class="bookshelf">
-            
+
         </div>
         <button class="open-modal">Add a new book to the library?</button>
+        <dialog class="modal-form">
+            <button class="close-modal">x</button>
+            <form id="add-to-library">
+                <label for="title">
+                    <span>Title</span>
+                    <input type="text" id="title" name="title" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <br>
+                <label for="author">
+                    <span>Author</span>
+                    <input type="text" id="author" name="author" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <br>
+                <label for="page-count">
+                    <span>Page Count</span>
+                    <input type="number" id="page-count" name="pageCount" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <br>
+                <label for="published-date">
+                    <span>Published Date</span>
+                    <input type="date" id="published-date" name="publishedDate" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <br>
+                <label for="genre">
+                    <span>Genre</span>
+                    <input type="text" id="genre" name="genre" required />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <br>
+                <input type="submit" id="submit-to-library" value="Submit">
+            </form>
+        </dialog>
     </div>
-    <dialog class="modal-form">
-        <button class="close-modal">x</button>
-        <form id="add-to-library">
-            <label for="title">
-                <span>Title</span>
-                <input type="text" id="title" name="title" required />
-                <span class="error" aria-live="polite"></span>
-            </label>
-            <br>
-            <label for="author">
-                <span>Author</span>
-                <input type="text" id="author" name="author" required />
-                <span class="error" aria-live="polite"></span>
-            </label>
-            <br>
-            <label for="page-count">
-                <span>Page Count</span>
-                <input type="number" id="page-count" name="pageCount" required />
-                <span class="error" aria-live="polite"></span>
-            </label>
-            <br>
-            <label for="published-date">
-                <span>Published Date</span>
-                <input type="date" id="published-date" name="publishedDate" required />
-                <span class="error" aria-live="polite"></span>
-            </label>
-            <br>
-            <label for="genre">
-                <span>Genre</span>
-                <input type="text" id="genre" name="genre" required />
-                <span class="error" aria-live="polite"></span>
-            </label>
-            <br>
-            <input type="submit" id="submit-to-library" value="Submit">
-        </form>
-    </dialog>
 </body>
 </html>
