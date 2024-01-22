@@ -74,7 +74,7 @@ function displayLibrary() {
         deleteButton.setAttribute('id', bookID);
         deleteButton.onclick = function() {
 			let toBeDeleted = document.querySelectorAll(`#${bookID}`);
-            toBeDeleted.setAttribute('border-style', none);
+            // toBeDeleted.setAttribute('border-style', none);
 			console.table(toBeDeleted)
 			for(let j = toBeDeleted.length - 1; j > 0; j--) {
 				toBeDeleted[j].remove();
