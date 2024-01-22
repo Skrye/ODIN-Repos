@@ -12,3 +12,18 @@
 button.open-modal {
     width: fit-content;
 }
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+    margin-left: 50%;
+    flex-direction: column;
+}
+
+form#add-to-library {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
