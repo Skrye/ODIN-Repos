@@ -9,6 +9,12 @@
     align-items: center;
 }
 
+div.bookshelf {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 button.open-modal {
     width: fit-content;
 }

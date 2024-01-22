@@ -1,6 +1,7 @@
 const dialog = document.querySelector('.modal-form');
 const showButton = document.querySelector('.open-modal');
 const closeButton = document.querySelector('.close-modal');
+const bookshelf = document.querySelector('.bookshelf');
 
 showButton.addEventListener('click', () => {
     dialog.showModal();
@@ -29,3 +30,54 @@ let myLibrary = [theHobbit, lastBookInTheUniverse];
 function addBookToLibrary() {
 
 }
+
+function displayLibrary() {
+    for (let i= 0; i < myLibrary.length; i++) {
+        let bookIDRaw = `${myLibrary[i].title}`;
+        let bookID = bookIDRaw.toLowerCase().split(' ').join('');
+
+        let newBook = document.createElement('div');
+        newBook.setAttribute('id', bookID);
+        bookshelf.appendChild(newBook);
+
+        let title = document.createElement('h1');
+        title.innerHTML = `${myLibrary[i].title}`;
+        title.setAttribute('id', bookID);
+        newBook.appendChild(title);
+
+        let author = document.createElement('h2');
+        author.innerHTML = `${myLibrary[i].author}`;
+        author.setAttribute('id', bookID);
+        newBook.appendChild(author);
+
+        let pageCount = document.createElement('p');
+        pageCount.innerHTML = `${myLibrary[i].pageCount}`;
+        pageCount.setAttribute('id', bookID);
+        newBook.appendChild(pageCount);
+
+        let publishedDate = document.createElement('p');
+        publishedDate.innerHTML = `${myLibrary[i].publishedDate}`;
+        publishedDate.setAttribute('id', bookID);
+        newBook.appendChild(publishedDate);
+
+        let genre = document.createElement('p');
+        genre.innerHTML = `${myLibrary[i].genre}`;
+        genre.setAttribute('id', bookID);
+        newBook.appendChild(genre);
+
+        let deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'x';
+        newBook.appendChild(deleteButton);
+        deleteButton.setAttribute('id', bookID);
+        deleteButton.onclick = function() {
+					let toBeDeleted = document.querySelectorAll(`#${bookID}`);
+					console.table(toBeDeleted)
+					for(let j = toBeDeleted.length - 1; j > 0; j--) {
+						toBeDeleted[j].remove();
+					}
+    		}
+    }
+    myLibrary = [];
+}
+
+displayLibrary();
