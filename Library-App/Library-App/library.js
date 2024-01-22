@@ -38,30 +38,33 @@ function displayLibrary() {
 
         let newBook = document.createElement('div');
         newBook.setAttribute('id', bookID);
+        newBook.setAttribute('class', book);
         bookshelf.appendChild(newBook);
 
         let title = document.createElement('h1');
         title.innerHTML = `${myLibrary[i].title}`;
         title.setAttribute('id', bookID);
+        newBook.setAttribute('class', title);
         newBook.appendChild(title);
 
         let author = document.createElement('h2');
         author.innerHTML = `${myLibrary[i].author}`;
         author.setAttribute('id', bookID);
+        newBook.setAttribute('class', author);
         newBook.appendChild(author);
 
         let pageCount = document.createElement('p');
-        pageCount.innerHTML = `${myLibrary[i].pageCount}`;
+        pageCount.innerHTML = `Pages: ${myLibrary[i].pageCount}`;
         pageCount.setAttribute('id', bookID);
         newBook.appendChild(pageCount);
 
         let publishedDate = document.createElement('p');
-        publishedDate.innerHTML = `${myLibrary[i].publishedDate}`;
+        publishedDate.innerHTML = `Published: ${myLibrary[i].publishedDate}`;
         publishedDate.setAttribute('id', bookID);
         newBook.appendChild(publishedDate);
 
         let genre = document.createElement('p');
-        genre.innerHTML = `${myLibrary[i].genre}`;
+        genre.innerHTML = `Genre: ${myLibrary[i].genre}`;
         genre.setAttribute('id', bookID);
         newBook.appendChild(genre);
 
@@ -70,12 +73,13 @@ function displayLibrary() {
         newBook.appendChild(deleteButton);
         deleteButton.setAttribute('id', bookID);
         deleteButton.onclick = function() {
-					let toBeDeleted = document.querySelectorAll(`#${bookID}`);
-					console.table(toBeDeleted)
-					for(let j = toBeDeleted.length - 1; j > 0; j--) {
-						toBeDeleted[j].remove();
-					}
-    		}
+			let toBeDeleted = document.querySelectorAll(`#${bookID}`);
+            toBeDeleted.setAttribute('border-style', none);
+			console.table(toBeDeleted)
+			for(let j = toBeDeleted.length - 1; j > 0; j--) {
+				toBeDeleted[j].remove();
+			}    
+    	}
     }
     myLibrary = [];
 }
