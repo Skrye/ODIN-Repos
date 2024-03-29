@@ -15,11 +15,11 @@ div.bookshelf {
     flex-wrap: wrap;
 }
 
-div.book {
+div.newBook {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: double black 2px;
+    border: double black;
     padding: 5px;
     margin: 10px;
 }
