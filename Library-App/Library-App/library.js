@@ -47,7 +47,7 @@ function displayLibrary() {
         newBook.setAttribute('class', title);
         newBook.appendChild(title);
 
-        let author = document.createElement('h2');
+        let author = document.createElement('p');
         author.innerHTML = `${myLibrary[i].author}`;
         author.setAttribute('id', bookID);
         newBook.setAttribute('class', author);
