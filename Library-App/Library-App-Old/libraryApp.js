@@ -49,10 +49,6 @@ submitNewBook.addEventListener('submit', (e) => {
     displayLibrary();
 });
 
-
-
-
-
 const libraryTable = document.getElementById('library-table');
 
 function displayLibrary() {

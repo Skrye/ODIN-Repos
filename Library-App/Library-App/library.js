@@ -27,9 +27,27 @@ const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman 
 
 let myLibrary = [theHobbit, lastBookInTheUniverse];
 
-function addBookToLibrary() {
+submitNewBook.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-}
+    const FD = new FormData(submitNewBook);
+    let newBookArray = [];
+    for (item of FD) {
+        newBookArray.push(item[1])
+    }
+
+    const newBook = Object.create(theHobbit);
+
+    newBook.title = `${newBookArray[0]}`;
+    newBook.author = `${newBookArray[1]}`;
+    newBook.pageCount = `${newBookArray[2]}`;
+    newBook.publishedDate = `${newBookArray[3]}`;
+    newBook.genre = `${newBookArray[4]}`;
+
+    myLibrary.push(newBook);
+    displayLibrary();
+    dialog.close();
+});
 
 function displayLibrary() {
     for (let i= 0; i < myLibrary.length; i++) {
