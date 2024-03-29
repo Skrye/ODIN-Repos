@@ -2,6 +2,7 @@ const dialog = document.querySelector('.modal-form');
 const showButton = document.querySelector('.open-modal');
 const closeButton = document.querySelector('.close-modal');
 const bookshelf = document.querySelector('.bookshelf');
+const submitNewBook = document.querySelector('#submit-to-library');
 
 showButton.addEventListener('click', () => {
     dialog.showModal();
