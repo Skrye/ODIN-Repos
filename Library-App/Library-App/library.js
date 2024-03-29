@@ -38,7 +38,7 @@ function displayLibrary() {
 
         let newBook = document.createElement('div');
         newBook.setAttribute('id', bookID);
-        newBook.setAttribute('class', book);
+        newBook.setAttribute('class', Book);
         bookshelf.appendChild(newBook);
 
         let title = document.createElement('h1');

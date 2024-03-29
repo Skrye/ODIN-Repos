@@ -57,8 +57,9 @@ const libraryTable = document.getElementById('library-table');
 
 function displayLibrary() {
     for (let i = 0; i < myLibrary.length; i++) {
-				let bookIDRaw = `${myLibrary[i].title}`;
-				let bookID = bookIDRaw.toLowerCase().split(' ').join('');
+		let bookIDRaw = `${myLibrary[i].title}`;
+		let bookID = bookIDRaw.toLowerCase().split(' ').join('');
+        
         let newBookRow = document.createElement('tr');
         newBookRow.setAttribute('id', bookID);
         libraryTable.appendChild(newBookRow);
