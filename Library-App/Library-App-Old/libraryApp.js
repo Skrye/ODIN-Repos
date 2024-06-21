@@ -44,6 +44,8 @@ submitNewBook.addEventListener('submit', (e) => {
     newBook.pageCount = `${newBookArray[2]}`;
     newBook.publishedDate = `${newBookArray[3]}`;
     newBook.genre = `${newBookArray[4]}`;
+    newBook.isRead = `${newBookArray[5]}`;
+
 
     myLibrary.push(newBook);
     displayLibrary();
