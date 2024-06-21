@@ -94,12 +94,6 @@ function displayLibrary() {
         isReadCheck.setAttribute('type', 'checkbox');
         isReadCheck.setAttribute('value', 'true');
         isReadCell.appendChild(isReadCheck);
-        /* if (myLibrary[bookID].isRead == 'true') {
-            isReadCell.innerHTML = 'Yes'
-            isReadCheck.checked = true
-        } else {
-            isReadCell.innerHTML = 'No'
-        } */
 
         let deleteCell = document.createElement('td');
         deleteCell.setAttribute('id', bookID);
