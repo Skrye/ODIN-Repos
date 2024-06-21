@@ -5,6 +5,7 @@ class Book {
         this.pageCount = pageCount;
         this.publishedDate = publishedDate;
         this.genre = genre;
+        this.isRead = isRead;
     }
 };
 
@@ -93,8 +94,9 @@ function displayLibrary() {
         isReadCheck.setAttribute('type', 'checkbox');
         isReadCheck.setAttribute('value', 'true');
         isReadCell.appendChild(isReadCheck)
-        if (isReadCheck.isReadCell == 'true') {
+        if (myLibrary[bookID].isRead == 'true') {
             isReadCell.innerHTML = 'Yes'
+            isReadCheck.checked = true
         } else {
             isReadCell.innerHTML = 'No'
         }
