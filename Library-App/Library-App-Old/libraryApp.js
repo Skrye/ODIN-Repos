@@ -5,7 +5,6 @@ class Book {
         this.pageCount = pageCount;
         this.publishedDate = publishedDate;
         this.genre = genre;
-        this.isRead = isRead;
     }
 };
 
@@ -44,7 +43,6 @@ submitNewBook.addEventListener('submit', (e) => {
     newBook.pageCount = `${newBookArray[2]}`;
     newBook.publishedDate = `${newBookArray[3]}`;
     newBook.genre = `${newBookArray[4]}`;
-    newBook.isRead = `${newBookArray[5]}`;
 
 
     myLibrary.push(newBook);
@@ -90,11 +88,14 @@ function displayLibrary() {
         let isReadCell = document.createElement('td');
         isReadCell.setAttribute('id', bookID);
         newBookRow.appendChild(isReadCell);
-        if (myLibrary[i].isRead == 'true') {
+        let isReadCheck = document.createElement('input');
+        isReadCheck.setAttribute('id', bookID);
+        isReadCell.appendChild(isReadCheck)
+        /* if (isReadCell.isReadCheck == 'true') {
             isReadCell.innerHTML = 'Yes'
         } else {
             isReadCell.innerHTML = 'No'
-        }
+        } */
 
         let deleteCell = document.createElement('td');
         deleteCell.setAttribute('id', bookID);
