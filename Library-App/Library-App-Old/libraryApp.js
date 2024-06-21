@@ -90,13 +90,14 @@ function displayLibrary() {
         newBookRow.appendChild(isReadCell);
         let isReadCheck = document.createElement('input');
         isReadCheck.setAttribute('id', bookID);
-        isReadCheck.setAttribute('type', 'checkbox')
+        isReadCheck.setAttribute('type', 'checkbox');
+        isReadCheck.setAttribute('value', 'true');
         isReadCell.appendChild(isReadCheck)
-        /* if (isReadCell.isReadCheck == 'true') {
+        if (isReadCheck.isReadCell == 'true') {
             isReadCell.innerHTML = 'Yes'
         } else {
             isReadCell.innerHTML = 'No'
-        } */
+        }
 
         let deleteCell = document.createElement('td');
         deleteCell.setAttribute('id', bookID);
