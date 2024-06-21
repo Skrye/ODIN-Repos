@@ -88,9 +88,9 @@ function displayLibrary() {
         let isReadCell = document.createElement('td');
         isReadCell.setAttribute('id', bookID);
         newBookRow.appendChild(isReadCell);
-        let isReadCheck = document.createElement('input', });
+        let isReadCheck = document.createElement('input');
         isReadCheck.setAttribute('id', bookID);
-        isReadCheck.setAttribute('type', )
+        isReadCheck.setAttribute('type', 'checkbox')
         isReadCell.appendChild(isReadCheck)
         /* if (isReadCell.isReadCheck == 'true') {
             isReadCell.innerHTML = 'Yes'
