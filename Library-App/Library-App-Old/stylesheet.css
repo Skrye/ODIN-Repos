@@ -30,6 +30,7 @@ td.delete-button {
 .modal-form {
     flex-direction: column;
     width: min-content;
+    justify-self: center;
     align-self: center;
     background-color: slategray;
     padding: 20px;
