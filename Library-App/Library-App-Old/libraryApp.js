@@ -7,7 +7,7 @@ class Book {
         this.genre = genre;
         this.isRead = isRead;
     }
-};
+}
 
 const theHobbit = new Book('The Hobbit', 'JRR Tolkien', 310, '1937-09-21', 'Fantasy', 'true');
 const lastBookInTheUniverse = new Book('The Last Book in the Universe', 'Rodman Philbrick', 240, '2002-03-01', 'Dystopian', 'false');
