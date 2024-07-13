@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+table#library-table {
+    display: table;
+    width: 100vw;
+}
+
+th {
+    border: solid 5px green;
+}
+
+td {
+    border-left: dashed 2px green;
+    border-right: dashed 2px green;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-form {
+    flex-direction: column;
+    width: min-content;
+    justify-self: center;
+    align-self: center;
+    background-color: slategray;
+    padding: 20px;
+}
+
+.close-modal {
+    align-self: flex-end;
+}
