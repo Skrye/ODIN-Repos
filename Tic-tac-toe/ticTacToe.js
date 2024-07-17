@@ -15,7 +15,7 @@ function gameBoard() {
 
     const placeMarker = (row, col, player) => {
         if (board[row][col].getValue() !== 0) {
-            throw new Error("Cell is already occupied");
+            throw new Error('Cell is already occupied');
         }
         board[row][col].addToken(player);
     };
@@ -49,8 +49,8 @@ function Cell() {
 }
 
 function GameController(
-    playerOneName = "Player One",
-     playerTwoName = "Player Two"
+    playerOneName = 'Player One',
+     playerTwoName = 'Player Two'
 ) {
     const board = gameBoard();
     board.createBoard(3);
@@ -122,6 +122,26 @@ function GameController(
         printNewRound,
         playRound,
     };
+}
+
+function DOMController() {
+    const cellElements = document.querySelectorAll('[data-cell]');
+    const restartButton = document.querySelector('.restart-button');
+
+    cellElements.forEach((cell) => {
+        cell.addEventListener("click", handleClick, { once: true });
+    });
+
+    function handleClick(e) {
+        const cell = e.target;
+        const row = cell.dataset.row;
+        const col = cell.dataset.col;
+        game.playRound(row, col);
+    }
+
+    restartButton.addEventListener("click", () => {
+        location.reload();
+    });
 }
 
 const game = GameController();
