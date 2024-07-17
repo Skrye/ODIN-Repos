@@ -54,6 +54,7 @@ function GameController(
 ) {
     const board = gameBoard();
     board.createBoard(3);
+    const ui = DOMController();
 
     const players = [
         {
@@ -125,8 +126,19 @@ function GameController(
 }
 
 function DOMController() {
+    const boardClassList = document.getElementByID('board');
     const cellElements = document.querySelectorAll('[data-cell]');
-    const restartButton = document.querySelector('.restart-button');
+    // display current turn using game.getActiveplayer()
+    const displayTurn = document.getElementByID('currentTurn');
+    // show name entry input on page load, hide and start first game on submit
+    const enterNames = document.getElementByID('enterPlayerNames');
+    const startButton = document.getElementByID('startGame');
+    // enter player names with formdata; refer to library app
+    const playerOneName = document.getElementByID('player1');
+    const playerTwoName = document.getElementByID('player2');
+    // show winner on game end (x/circle/draw) and hide on restart
+    const winningMessage = document.getElementByID('winningMessage');
+    const restartButton = document.getElementByID('restartButton');
 
     cellElements.forEach((cell) => {
         cell.addEventListener("click", handleClick, { once: true });
@@ -137,11 +149,13 @@ function DOMController() {
         const row = cell.dataset.row;
         const col = cell.dataset.col;
         game.playRound(row, col);
+        switchTurn();
     }
 
-    restartButton.addEventListener("click", () => {
-        location.reload();
-    });
+    function switchTurn() {
+        // board.add(add x or circle based on active player)
+        
+    }
 }
 
 const game = GameController();
