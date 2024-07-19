@@ -48,10 +48,9 @@ function Cell() {
     };
 }
 
-function GameController(
-    playerOneName = 'Player One',
-     playerTwoName = 'Player Two'
-) {
+function GameController() {
+    let playerOneName = 'Player One';
+    let playerTwoName = 'Player Two';
     const board = gameBoard();
     board.createBoard(3);
     const ui = DOMController();
@@ -66,6 +65,12 @@ function GameController(
             token: 2
         }
     ];
+
+    function startGame() {
+        players[0].name = ui.playerOneName.value;
+        players[1].name = ui.playerTwoName.value;
+        ui.board.classList.add('x');
+    }
 
     let activePlayer = players[0];
 
@@ -98,6 +103,7 @@ function GameController(
             const values = combo.map(([row, col]) => board.getBoard()[row][col].getValue());
             if (values.every((value) => value === activePlayer.token)) {
                 console.log(`${activePlayer.name} wins!`);
+                ui.winningMessage.classList.add('show');
             } else if (values.every((value) => value !== 0)) {
                 console.log("It's a draw!"); 
             }
@@ -109,6 +115,7 @@ function GameController(
             board.placeMarker(row, col, activePlayer.token);
             checkForWin();
             switchPlayerTurn();
+            ui.switchTurn();
             printNewRound();
         } catch (error) {
             console.error(error.message);
@@ -118,6 +125,7 @@ function GameController(
     printNewRound();
 
     return { 
+        startGame,
         switchPlayerTurn,
         getActivePlayer,
         printNewRound,
@@ -126,19 +134,25 @@ function GameController(
 }
 
 function DOMController() {
-    const boardClassList = document.getElementByID('board');
+    const board = document.getElementById('board');
     const cellElements = document.querySelectorAll('[data-cell]');
     // display current turn using game.getActiveplayer()
-    const displayTurn = document.getElementByID('currentTurn');
+    const displayTurn = document.getElementById('currentTurn');
     // show name entry input on page load, hide and start first game on submit
-    const enterNames = document.getElementByID('enterPlayerNames');
-    const startButton = document.getElementByID('startGame');
+    const enterNames = document.getElementById('enterPlayerNames');
+    const startButton = document.getElementById('startGame');
     // enter player names with formdata; refer to library app
-    const playerOneName = document.getElementByID('player1');
-    const playerTwoName = document.getElementByID('player2');
+    const playerOneName = document.getElementById('player1');
+    const playerTwoName = document.getElementById('player2');
     // show winner on game end (x/circle/draw) and hide on restart
-    const winningMessage = document.getElementByID('winningMessage');
-    const restartButton = document.getElementByID('restartButton');
+    const winningMessage = document.getElementById('winningMessage');
+    const restartButton = document.getElementById('restartButton');
+
+    startButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        game.startGame(playerOneName, playerTwoName);
+        enterNames.classList.toggle('show');
+    });
 
     cellElements.forEach((cell) => {
         cell.addEventListener("click", handleClick, { once: true });
@@ -149,12 +163,37 @@ function DOMController() {
         const row = cell.dataset.row;
         const col = cell.dataset.col;
         game.playRound(row, col);
+        cell.classList.add(game.getActivePlayer().token === 1 ? 'circle' : 'x');
         switchTurn();
     }
 
     function switchTurn() {
         // board.add(add x or circle based on active player)
-        
+        let result = game.getActivePlayer().token === 1 ? 'x' : 'circle';
+        console.log(result);
+        board.classList.toggle(`${result}`);
+        displayTurn.classList.toggle(`${result}`);
+    }
+
+    function gameOver() {
+        winningMessage.classList.toggle('show');
+    }
+
+    function restartGame() {
+        restartButton.addEventListener('click', () => {
+            game.restartGame();
+            winningMessage.classList.remove('show');
+        });
+    };
+
+    return {
+        board,
+        playerOneName,
+        playerTwoName,
+        enterNames,
+        switchTurn,
+        gameOver,
+        restartGame
     }
 }
 
