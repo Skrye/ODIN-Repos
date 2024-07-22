@@ -98,31 +98,38 @@ function GameController() {
             [[0, 0], [1, 1], [2, 2]],
             [[0, 2], [1, 1], [2, 0]],
         ];
-
-        winningCombos.forEach((combo) => {
+    
+        for (const combo of winningCombos) {
             const values = combo.map(([row, col]) => board.getBoard()[row][col].getValue());
             if (values.every((value) => value === activePlayer.token)) {
                 console.log(`${activePlayer.name} wins!`);
-                ui.winningMessage.classList.add('show');
-            } else if (values.every((value) => value !== 0)) {
-                console.log("It's a draw!"); 
+                ui.gameOver('win');
+                return 'win';
             }
-        });
+        }
+    
+        const isDraw = board.getBoard().every(row => row.every(cell => cell.getValue() !== 0));
+        if (isDraw) {
+            console.log("It's a draw!");
+            ui.gameOver('draw');
+            return 'draw';
+        }
     };
 
     const playRound = (row, col) => {
         try {
             board.placeMarker(row, col, activePlayer.token);
-            checkForWin();
-            switchPlayerTurn();
-            ui.switchTurn();
-            printNewRound();
+            const result = checkForWin();
+            if (result === 'win' || result === 'draw') {
+                return;
+            } else {
+                switchPlayerTurn();
+                printNewRound();
+            }
         } catch (error) {
             console.error(error.message);
         }
     };
-
-    printNewRound();
 
     return { 
         startGame,
@@ -169,14 +176,26 @@ function DOMController() {
 
     function switchTurn() {
         // board.add(add x or circle based on active player)
-        let result = game.getActivePlayer().token === 1 ? 'x' : 'circle';
-        console.log(result);
-        board.classList.toggle(`${result}`);
-        displayTurn.classList.toggle(`${result}`);
+        if (game.getActivePlayer().token ===  1) {
+            board.classList.add('x');
+            board.classList.remove('circle');
+            displayTurn.classList.remove('circle');
+            displayTurn.classList.add('x');
+        } else {
+            board.classList.remove('x');
+            board.classList.add('circle');
+            displayTurn.classList.remove('x');
+            displayTurn.classList.add('circle');
+        }
     }
 
-    function gameOver() {
-        winningMessage.classList.toggle('show');
+    function gameOver(str) {
+        if (str === 'win') {
+            winningMessage.innerText = `${game.getActivePlayer().name} wins!`;
+        } else if (str === 'draw') {
+            winningMessage.innerText = "It's a draw!";
+        }
+        winningMessage.classList.add('show');
     }
 
     function restartGame() {
