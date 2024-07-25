@@ -113,6 +113,7 @@ body {
     background-color: white;
 }
 
+.winning-page,
 .winning-message,
 .enter-player-names {
     display: none;
@@ -125,6 +126,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    justify-items: center;
     font-size: 5rem;
     flex-direction: column;
 }
@@ -139,10 +141,13 @@ body {
 .winning-message button,
 .enter-player-names button {
     font-size: 2rem;
+    color: black;
     background-color: white;
     border: 1px solid black;
     padding: 25px .5em;
     cursor: pointer;
+    align-self: center;
+    justify-self: center;
 }
 
 .winning-message button:hover,
@@ -150,9 +155,12 @@ body {
     background-color: black;
     color: white;
     border-color: white;
+    align-self: center;
+    justify-self: center;
 }
 
-.winning-message.show,
-.enter-player-names.show {
+.winning-page.show,
+.enter-player-names.show,
+.winning-message.show {
     display: flex;
 }

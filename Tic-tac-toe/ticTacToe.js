@@ -25,11 +25,16 @@ function gameBoard() {
         console.log(boardWithCellValues)
     }
 
+    const restartGame = () => {
+        // wipe the board, update the winner's score
+    }
+
     return { 
         createBoard,
         getBoard,
         placeMarker,
-        printBoard 
+        printBoard,
+        restartGame 
     };
 }
 
@@ -153,6 +158,7 @@ function DOMController() {
     const playerTwoName = document.getElementById('player2');
     // show winner on game end (x/circle/draw) and hide on restart
     const winningMessage = document.getElementById('winningMessage');
+    const winner = document.getElementById('winner');
     const restartButton = document.getElementById('restartButton');
 
     startButton.addEventListener('click', (e) => {
@@ -191,19 +197,18 @@ function DOMController() {
 
     function gameOver(str) {
         if (str === 'win') {
-            winningMessage.innerText = `${game.getActivePlayer().name} wins!`;
+            winner.innerHTML = `${game.getActivePlayer().name} wins!`;
         } else if (str === 'draw') {
             winningMessage.innerText = "It's a draw!";
         }
         winningMessage.classList.add('show');
+        restartButton.classList.add('show');
     }
 
-    function restartGame() {
-        restartButton.addEventListener('click', () => {
-            game.restartGame();
-            winningMessage.classList.remove('show');
-        });
-    };
+    restartButton.addEventListener('click', () => {
+        game.restartGame();
+        winningMessage.classList.remove('show');
+    });
 
     return {
         board,
@@ -211,8 +216,7 @@ function DOMController() {
         playerTwoName,
         enterNames,
         switchTurn,
-        gameOver,
-        restartGame
+        gameOver
     }
 }
 
