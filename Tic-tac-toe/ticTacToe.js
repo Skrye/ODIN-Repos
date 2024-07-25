@@ -25,16 +25,11 @@ function gameBoard() {
         console.log(boardWithCellValues)
     }
 
-    const restartGame = () => {
-        // wipe the board, update the winner's score
-    }
-
     return { 
         createBoard,
         getBoard,
         placeMarker,
-        printBoard,
-        restartGame 
+        printBoard 
     };
 }
 
@@ -136,12 +131,29 @@ function GameController() {
         }
     };
 
+    const restartGame = () => {
+        board.getBoard().forEach(row => {
+            row.forEach(cell => {
+                cell.addToken(0);
+            });
+        ui.cellElements.forEach((cell) => {
+            cell.classList.remove('x', 'circle');
+        });
+        ui.board.classList.remove('x', 'circle');
+        ui.switchTurn();
+        ui.enterNames.classList.add('show');
+        ui.winningMessage.classList.remove('show');
+        ui.restartButton.classList.remove('show');
+        }
+    };
+
     return { 
         startGame,
         switchPlayerTurn,
         getActivePlayer,
         printNewRound,
         playRound,
+        restartGame
     };
 }
 
@@ -207,7 +219,6 @@ function DOMController() {
 
     restartButton.addEventListener('click', () => {
         game.restartGame();
-        winningMessage.classList.remove('show');
     });
 
     return {
@@ -215,6 +226,9 @@ function DOMController() {
         playerOneName,
         playerTwoName,
         enterNames,
+        winningMessage,
+        restartButton,
+        cellElements,
         switchTurn,
         gameOver
     }
