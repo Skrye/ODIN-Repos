@@ -10,7 +10,27 @@
 </head>
 
 <body>
-  <div class="current-turn" id="currentTurn"></div>
+  <div class="current-turn" id="currentTurn">Make the first move!</players></div>
+
+  <div class="scoreboard" id="scoreboard">
+    <div class="player1 display" id="player1Display">
+      <div class="player1 name" id="player1Name">
+        Player One
+      </div>
+      <div class="player1 score" id="player1Score">
+        0
+      </div>
+    </div>
+    <div class="player2 display" id="player2Display">
+      <div class="player2 name" id="player2Name">
+        Player Two
+      </div>
+      <div class="player2 score" id="player2Score">
+        0
+      </div>
+    </div>
+  </div>
+
   <div class="board" id="board">
     <div class="cell" data-cell data-row="0" data-col="0"></div>
     <div class="cell" data-cell data-row="0" data-col="1"></div>
@@ -22,16 +42,20 @@
     <div class="cell" data-cell data-row="2" data-col="1"></div>
     <div class="cell" data-cell data-row="2" data-col="2"></div>
   </div>
+
   <div class="enter-player-names show" id="enterPlayerNames">
-    <input type="text" id="player1" value="Player One">
-    <input type="text" id="player2" value="Player Two">
+    <input type="text" id="player1NameInput" value="Player One">
+    <input type="text" id="player2NameInput" value="Player Two">
     <button id="startGame">Start Game</button>
   </div>
+
   <div class="winning-message" id="winningMessage">
     <div class="winner" id="winner"></div>
     <button id="restartButton">Restart</button>
   </div>
+
   <script src="./ticTacToe.js"></script>
+
 </body>
 
 </html>

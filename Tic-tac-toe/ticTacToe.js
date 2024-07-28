@@ -66,12 +66,6 @@ function GameController() {
         }
     ];
 
-    function startGame() {
-        players[0].name = ui.playerOneName.value;
-        players[1].name = ui.playerTwoName.value;
-        ui.board.classList.add('x');
-    }
-
     let activePlayer = players[0];
 
     const switchPlayerTurn = () => {
@@ -135,17 +129,12 @@ function GameController() {
             row.forEach(cell => {
                 cell.addToken(0);
             });
-            ui.cellElements.forEach((cell) => {
-                cell.classList.remove('x', 'circle');
-            });
-            winningMessage.classList.remove('show');
-            restartButton.classList.remove('show');
         })
     };
     
 
     return { 
-        startGame,
+        players,
         switchPlayerTurn,
         getActivePlayer,
         printNewRound,
@@ -163,16 +152,24 @@ function DOMController() {
     const enterNames = document.getElementById('enterPlayerNames');
     const startButton = document.getElementById('startGame');
     // enter player names with formdata; refer to library app SCRATCH THAT VALUES ARE EASIER
-    const playerOneName = document.getElementById('player1');
-    const playerTwoName = document.getElementById('player2');
+    const playerOneName = document.getElementById('player1NameInput');
+    const playerTwoName = document.getElementById('player2NameInput');
     // show winner on game end (x/circle/draw) and hide on restart
     const winningMessage = document.getElementById('winningMessage');
     const winner = document.getElementById('winner');
     const restartButton = document.getElementById('restartButton');
+    // show current player turn and update score when someone wins
+    const playerOneScore = document.getElementById('player1Score');
+    const playerOneNameDisplay = document.getElementById('player1Name');
+    const playerTwoScore = document.getElementById('player2Score');
+    const playerTwoNameDisplay = document.getElementById('player2Name');
+
 
     startButton.addEventListener('click', (e) => {
         e.preventDefault();
-        game.startGame(playerOneName, playerTwoName);
+        startGame(playerOneName, playerTwoName);
+        playerOneNameDisplay.innerHTML = playerOneName.value;
+        playerTwoNameDisplay.innerHTML = playerTwoName.value;
         enterNames.classList.toggle('show');
         game.printNewRound();
     });
@@ -180,16 +177,21 @@ function DOMController() {
     cellElements.forEach((cell) => {
         cell.addEventListener("click", handleClick);
     });
-// TBF: HTML Marker for the last token placed before game over is placed as the opposite player's mark.
-// TBF: when clicking on a mark that has already been placed, the ui changes the mark to a circle, regardless of turn. does not switch to x. array does nto change thanks to try/catch error.
+
     function handleClick(e) {
         const cell = e.target;
         const row = cell.dataset.row;
         const col = cell.dataset.col;
-        if (game.playRound(row, col) !== 'gameover') {
+        if (game.playRound(row, col) !== 'gameover' && cell.classList.length === 1) {
             cell.classList.add(game.getActivePlayer().token === 1 ? 'circle' : 'x');
             switchTurn();
         }
+    }
+
+    function startGame() {
+        game.players[0].name = playerOneName.value;
+        game.players[1].name = playerTwoName.value;
+        board.classList.add('x');
     }
 
     function switchTurn() {
@@ -199,17 +201,24 @@ function DOMController() {
             board.classList.remove('circle');
             displayTurn.classList.remove('circle');
             displayTurn.classList.add('x');
+            displayTurn.innerHTML = `${game.getActivePlayer().name}'s turn`;
         } else {
             board.classList.remove('x');
             board.classList.add('circle');
             displayTurn.classList.remove('x');
             displayTurn.classList.add('circle');
+            displayTurn.innerHTML = `${game.getActivePlayer().name}'s turn`;
         }
     }
 
     function gameOver(str) {
         if (str === 'win') {
             winner.innerHTML = `${game.getActivePlayer().name} wins!`;
+            if (game.getActivePlayer().token === 1) {
+                playerOneScore.innerHTML++;
+            } else {
+                playerTwoScore.innerHTML++;
+            };
         } else if (str === 'draw') {
             winner.innerHTML = "It's a draw!";
         }
@@ -221,16 +230,14 @@ function DOMController() {
     restartButton.addEventListener('click', () => {
         game.restartGame();
         game.printNewRound();
+        winningMessage.classList.remove('show');
+        restartButton.classList.remove('show');
+        cellElements.forEach((cell) => {
+            cell.classList.remove('x', 'circle');
+        });
     });
 
     return {
-        board,
-        playerOneName,
-        playerTwoName,
-        enterNames,
-        winningMessage,
-        restartButton,
-        cellElements,
         switchTurn,
         gameOver
     }
