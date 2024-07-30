@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header {
+    justify-self: center;
+}
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    flex-direction: column;
+}
+
+.important {
+    font-weight: bold;
+}
