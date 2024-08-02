@@ -1,21 +1,37 @@
 nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    justify-self: center;
+    width: 50vw;
 }
 
-header {
-    justify-self: center;
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h1, header, h3 {
+    display: flex;
+    justify-content: center;
+    background-color: #6E360E;
+    color: #FEFAF5;
 }
 
 .section {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    border: solid 1px black;
+    border: double 5px #FEFAF5;
+    border-radius: 50%;
     flex-direction: column;
+    width: 25vw;
+    margin: 5% auto;
+    padding: 5%;
+    background-color: #6E360E;
+    color: #FEFAF5;
 }
 
-.important {
-    font-weight: bold;
+body {
+    background-image: url(./beans-round-border.jpg);
+    background-size: 100% 100%;
 }
