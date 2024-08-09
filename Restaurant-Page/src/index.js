@@ -1,4 +1,5 @@
 import './styles.css';
+import menu from './menu.js';
 // import Background from './beans-round-border.jpg';
 
 function init() {
@@ -55,6 +56,10 @@ function init() {
         content.appendChild(hourSection);
         content.appendChild(locationSection);
     });
+
+    menuButton.addEventListener('click', menu);
 }
 
 init();
+
+export default init;
