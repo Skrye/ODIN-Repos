@@ -1,11 +1,12 @@
 import init from "./index.js";
+import BlackTeaCake from './img/black-tea-cake.jpg';
 
 function menu() {
     let homeButton = document.getElementById('home');
     let menuButton = document.getElementById('menu');
     let aboutButton = document.getElementById('about');
     let content = document.getElementById('content');
-    
+
     let header = document.createElement('h1');
     header.textContent = "Menu";
 
@@ -20,7 +21,7 @@ function menu() {
     }
 
     const menuItems = [
-        new MenuItem('Black Tea Cake with Honey Buttercream', 'A moist black tea cake with honey buttercream frosting.', '$4.50', './img/black-tea-cake.jpg', 'Sides'),
+        new MenuItem('Black Tea Cake with Honey Buttercream', 'A moist black tea cake with honey buttercream frosting.', '$4.50', BlackTeaCake, 'Sides'),
         new MenuItem('Layered Salad', 'A salad with layers of lettuce, peas, cheese, and bacon.', '$6.50', '', 'Sides'),
         new MenuItem('Tortilla Rollups', 'Tortilla rolls filled with cream cheese, turkey, carrots, cucumber, lettuce, and avocado.', '$9.50', '', 'Main Dishes'),
         new MenuItem('Coffee', 'A cup of coffee.', '$3.50', '', 'Drinks'),
