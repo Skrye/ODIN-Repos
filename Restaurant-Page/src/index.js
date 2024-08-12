@@ -1,13 +1,13 @@
 import './styles.css';
 import menu from './menu.js';
-// import Background from './beans-round-border.jpg';
+import about from './about.js';
 
 function init() {
     let homeButton = document.getElementById('home');
     let menuButton = document.getElementById('menu');
     let aboutButton = document.getElementById('about');
     let content = document.getElementById('content');
-    
+    content.innerHTML = '';
     let header = document.createElement('h1');
     header.textContent = "Skrye's Deli";
     content.appendChild(header);
@@ -58,6 +58,8 @@ function init() {
     });
 
     menuButton.addEventListener('click', menu);
+    aboutButton.addEventListener('click', about);
+    homeButton.addEventListener('click', init);
 }
 
 init();

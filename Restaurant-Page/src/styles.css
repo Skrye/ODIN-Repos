@@ -31,6 +31,12 @@ h1 {
     font-size: 3rem;
 }
 
+h3 {
+    color: #FEFAF5;
+    text-shadow: black 1px 0 10px;
+    font-size: 1.5rem;
+}
+
 .content {
     display: flex;
     align-items: center;
@@ -51,6 +57,7 @@ div {
     border-radius: 50%;
     flex-direction: column;
     width: 25vw;
+    height: auto;
     margin: 1% auto;
     padding: 10%;
     background-color: #6E360E;
@@ -67,7 +74,24 @@ div {
 
 img {
     border-radius: 15px;
-    max-width: 100%;
+    max-width: 50%;
     max-height: 100%;
     width: 100%;
+}
+
+.section menu {
+    font-size: 1.7rem;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    margin: 2% 0;
 }

@@ -1,4 +1,3 @@
-import init from "./index.js";
 import BlackTeaCake from './img/black-tea-cake.jpeg';
 import LayeredSalad from './img/layered-salad.jpg';
 import TortillaRollups from './img/tortilla-rollups.jpg';
@@ -6,13 +5,11 @@ import Coffee from './img/coffee-cup.jpg';
 import ChickenSandwich from './img/chicken-sandwich.jpg';
 
 function menu() {
-    let homeButton = document.getElementById('home');
-    let menuButton = document.getElementById('menu');
-    let aboutButton = document.getElementById('about');
     let content = document.getElementById('content');
     content.innerHTML = '';
     let header = document.createElement('h1');
     header.textContent = "Menu";
+    content.appendChild(header);
 
     class MenuItem {
         constructor(name, description, price, image, type) {
@@ -33,22 +30,24 @@ function menu() {
     ]
 
     let drinksSection = document.createElement('div');
-    drinksSection.classList.add('section');
-    let drinksHeader = document.createElement('h2');
+    drinksSection.classList.add('menu');
+    let drinksHeader = document.createElement('h3');
     drinksHeader.textContent = "Drinks";
-    drinksSection.appendChild(drinksHeader);
+    drinksHeader.classList.add('menu');
+    content.appendChild(drinksHeader);
     content.appendChild(drinksSection);
 
     let sidesSection = document.createElement('div');
-    sidesSection.classList.add('section');
-    let sidesHeader = document.createElement('h2');
+    sidesSection.classList.add('menu');
+    let sidesHeader = document.createElement('h3');
     sidesHeader.textContent = "Sides";
+    sidesHeader.classList.add('menu');
     sidesSection.appendChild(sidesHeader);
     content.appendChild(sidesSection);
 
     let mainDishesSection = document.createElement('div');
-    mainDishesSection.classList.add('section');
-    let mainDishesHeader = document.createElement('h2');
+    mainDishesSection.classList.add('menu');
+    let mainDishesHeader = document.createElement('h3');
     mainDishesHeader.textContent = "Main Dishes";
     mainDishesSection.appendChild(mainDishesHeader);
     content.appendChild(mainDishesSection);
@@ -56,6 +55,7 @@ function menu() {
     menuItems.forEach(item => {
         let itemDiv = document.createElement('div');
         itemDiv.classList.add('menu-item');
+        itemDiv.classList.add('section');
         let itemName = document.createElement('h3');
         itemName.textContent = item.name;
         let itemDescription = document.createElement('p');
@@ -77,8 +77,6 @@ function menu() {
             mainDishesSection.appendChild(itemDiv);
         }
     });
-
-    homeButton.addEventListener('click', init)
 }
 
 export default menu;
