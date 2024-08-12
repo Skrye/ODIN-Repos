@@ -2,6 +2,8 @@ import init from "./index.js";
 import BlackTeaCake from './img/black-tea-cake.jpeg';
 import LayeredSalad from './img/layered-salad.jpg';
 import TortillaRollups from './img/tortilla-rollups.jpg';
+import Coffee from './img/coffee-cup.jpg';
+import ChickenSandwich from './img/chicken-sandwich.jpg';
 
 function menu() {
     let homeButton = document.getElementById('home');
@@ -26,7 +28,8 @@ function menu() {
         new MenuItem('Black Tea Cake with Honey Buttercream', 'A moist black tea cake with honey buttercream frosting.', '$4.50', BlackTeaCake, 'Sides'),
         new MenuItem('Layered Salad', 'A salad with layers of lettuce, peas, cheese, and bacon.', '$6.50', LayeredSalad, 'Sides'),
         new MenuItem('Tortilla Rollups', 'Tortilla rolls filled with cream cheese, turkey, carrots, cucumber, lettuce, and avocado.', '$9.50', TortillaRollups, 'Main Dishes'),
-        new MenuItem('Coffee', 'A cup of coffee.', '$3.50', , 'Drinks'),
+        new MenuItem('Coffee', 'A cup of coffee.', '$3.50', Coffee, 'Drinks'),
+        new MenuItem('Chicken Sandwich', 'A sandwich with fried chicken, lettuce, tomato, and mayonnaise.', '$8.50', ChickenSandwich, 'Main Dishes')
     ]
 
     let drinksSection = document.createElement('div');
